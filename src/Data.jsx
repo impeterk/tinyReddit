@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import Search from './Search'
-
+import 'bulma/css/bulma.css'
 export default function Data(props) {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [numberOfPosts, setNumberOfPosts] = useState(10)
     const [listing, setListing] = useState('hot')
+    
+    let best = 'best'
+    let hot = 'hot'
+    let newest = 'new'
 
     useEffect(() => {
     async function fetchData() {
@@ -14,7 +18,6 @@ export default function Data(props) {
       let responseJSON = await response.json()
       responseJSON = responseJSON.data.children
         setData(responseJSON)
-        console.log(data)
       setLoading(false)
     }
     fetchData()
@@ -24,27 +27,32 @@ export default function Data(props) {
     setNumberOfPosts((numberOfPosts) => numberOfPosts + 5)
   }
 
-  if (!data || loading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    )
-  }
+    const handleListing = event => {
+        setListing(event.target.id)
+    }
+    
+    const color = id => {
+      let tmp = 'button'
+      if (listing == id) {
+        tmp = 'button is-primary'
+      }
+      return tmp
+   }
 
-  if (data) {
+
+
     return (
         <div>
-            <button value='best' onClick={(e) => setListing(e.target.value)}>best</button>
-            <button value='new' onClick={(e) => setListing(e.target.value)}>new</button>
-            <button value='hot' onClick={(e) => setListing(e.target.value)}>hot</button>
+            <button id={best} className={color(best)} onClick={handleListing}>best</button>
+            <button id={newest} className={color(newest)} onClick={handleListing}>new</button>
+            <button id={hot} className={color(hot)} onClick={handleListing}>hot</button>
         <ul>
-        {data.map(post => (
+        {!data || loading ? <p>Loading...</p> :
+        data.map(post => (
           <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
         ))}
       </ul>
       <button onClick={handleClick}>{numberOfPosts}</button>
       </div>
     )
-  }
 }
