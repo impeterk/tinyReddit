@@ -47,11 +47,11 @@ export default function Data(props) {
             <button id={newest} className={color(newest)} onClick={handleListing}>new</button>
             <button id={hot} className={color(hot)} onClick={handleListing}>hot</button>
         {!data || loading ? <p>Loading...</p> :
-        <ul>
+        <ol>
         {data.map(post => (
           <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
           ))}
-      </ul>
+      </ol>
         }
       <button onClick={handleClick}>{numberOfPosts}</button>
       </div>
