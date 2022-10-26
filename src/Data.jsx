@@ -16,7 +16,7 @@ export default function Data(props) {
       setLoading(true)
       let response = await fetch(`/api/r/${props.subreddit}/${listing}.json?limit=${numberOfPosts}`, {mode:'cors'}, {headers: {'Access-Control-Allow-Origin': '*'}})
       let responseJSON = await response.json()
-      responseJSON = responseJSON.data.children
+      responseJSON = await responseJSON.data.children
         setData(responseJSON)
       setLoading(false)
     }
@@ -46,12 +46,13 @@ export default function Data(props) {
             <button id={best} className={color(best)} onClick={handleListing}>best</button>
             <button id={newest} className={color(newest)} onClick={handleListing}>new</button>
             <button id={hot} className={color(hot)} onClick={handleListing}>hot</button>
-        <ul>
         {!data || loading ? <p>Loading...</p> :
-        data.map(post => (
+        <ul>
+        {data.map(post => (
           <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
-        ))}
+          ))}
       </ul>
+        }
       <button onClick={handleClick}>{numberOfPosts}</button>
       </div>
     )
