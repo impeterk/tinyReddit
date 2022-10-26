@@ -16,6 +16,7 @@ export default function Search(props) {
 
     return(
         <div>
+            <h1>{subreddit.toLocaleUpperCase()}</h1>
         <form onSubmit={handleSubmit}>
             <input 
             value={value}
