@@ -6,7 +6,7 @@
 - [ ] create design / scetch
 - [ ] create wireframe
 
-**Commit often and create ***NEW BRANCHES***
+**Commit often and create *NEW BRANCHES***
 
 ---
 #### 25.10.2022
@@ -46,7 +46,7 @@ Other feature that I have added is, that listing buttons now change color dinami
   This is the main focus for upcoming week. I really need to implement react router, so that the App feels more complete. 
 
 - **Data fetching**
-  This one will be pain. Altough it is the key component of user experience. It is really imporant, that the data that is displayed is only updated with "load more" and not redrawn. Right now it is not implemented :worried:. Only time I would like to redrawn whole data is after we change the subreddit or search for something.
+  This one will be a pain. Altough it is the key component of user experience. It is really imporant, that the data that is displayed is only updated with "load more" and not redrawn. Right now it is not implemented :worried:. Only time I would like to redrawn whole data is after we change the subreddit or search for something.
 
 **Goals**
 - [ ] **Branches !!!** -Really new to work on this
@@ -54,5 +54,12 @@ Other feature that I have added is, that listing buttons now change color dinami
 - [ ] Data fetching
 - [ ] Styling
 - [ ] Comments
+
+---
+#### 27.10.2022
+
+I have only worked on simple "*search*". Simply created input field, that updates value based on user input. Than I have passed this down to `<Data>` component. For now we are simply rendering search term in `<p>` element. Later we will add search functionality completely with option to saerch only within subreddit or to search whole reddit.
+
+I am finally using git branches :joy:. Lets see how long I will keep this up. 
 
 ---
