@@ -32,7 +32,7 @@ export default function Data(props) {
     }
     
     const color = id => {
-      let tmp = 'button'
+      let tmp = 'button is-dark'
       if (listing == id) {
         tmp = 'button is-primary'
       }
