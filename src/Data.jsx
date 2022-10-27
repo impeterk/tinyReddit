@@ -46,6 +46,7 @@ export default function Data(props) {
             <button id={best} className={color(best)} onClick={handleListing}>best</button>
             <button id={newest} className={color(newest)} onClick={handleListing}>new</button>
             <button id={hot} className={color(hot)} onClick={handleListing}>hot</button>
+            <p>{props.search}</p>
         {!data || loading ? <p>Loading...</p> :
         <ol>
         {data.map(post => (
