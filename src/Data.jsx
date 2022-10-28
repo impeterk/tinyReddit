@@ -8,17 +8,23 @@ export default function Data(props) {
   const [numberOfPosts, setNumberOfPosts] = useState(10)
   const [listing, setListing] = useState('hot')
   const [reorderData, setReorderData] = useState(false)
-
+  const [errorMessage, setErrorMessage] = useState('')
   let best = 'best'
   let hot = 'hot'
   let newest = 'new'
 
   async function fetchData(subreddit, listing, numberOfPosts, loading) {
     setLoading(loading)
-    let response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
+    let response
+    try {
+      response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
+    } catch(err) {
+      setErrorMessage('Try different subreddit')
+    }
     let responseJSON = await response.json()
     responseJSON = await responseJSON.data.children
     setData(responseJSON)
+    setErrorMessage('')
     if (loading === true) {
       setLoading(!loading)
     }
@@ -63,7 +69,7 @@ export default function Data(props) {
       <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
       <button value={best} className={color(best)} onClick={handleListing}>best</button>
       <p>{props.search}</p>
-      {!data || loading ? <h2>Loading...</h2> :
+      {!data || loading ? <><h2>Loading...</h2><p>{errorMessage}</p></> :
         <ol>
           {data.map(post => (
             <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
