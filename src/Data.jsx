@@ -9,7 +9,8 @@ export default function Data(props) {
   const [numberOfPosts, setNumberOfPosts] = useState(10)
   const [listing, setListing] = useState('hot')
   const [reorderData, setReorderData] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const errorMessage = "Try different subreddit!"
+
   let best = 'best'
   let hot = 'hot'
   let newest = 'new'
@@ -20,12 +21,11 @@ export default function Data(props) {
     try {
     response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
   } catch(err) {
-      setErrorMessage('Try different subreddit')
+      errorMessage
   }
     let responseJSON = await response.json()
       responseJSON = await responseJSON.data.children
       setData(responseJSON)
-      setErrorMessage('')
     if (loading === true) {
       setLoading(!loading)
     }
