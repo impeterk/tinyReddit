@@ -73,7 +73,7 @@ There is now option to search within specific subreddit or whole subreddit. Alth
   in the end might not be necessary to implement. To be honest this depend on final styling and functionality
 
 - **Data fetching** 
-  I should create `<Loading />` compoment when loading data, so that the app looks nicer. This should be pretty easy thanks to bulma :smile:
+ I have created new `<Loading />` component.This was pretty easy thanks to bulma :smile:. It is progress bar with text, that randomly changes color
 
 I have also added some "*error*" messages. When the subreddit you are trying to access does not exist. I believe that the functionality I wanted to build is there. So I will start to work on styling.
 
