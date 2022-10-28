@@ -18,21 +18,20 @@ export default function Data(props) {
     setLoading(loading)
     let response
     try {
-      response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
-    } catch(err) {
+    response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
+  } catch(err) {
       setErrorMessage('Try different subreddit')
-    }
+  }
     let responseJSON = await response.json()
-    responseJSON = await responseJSON.data.children
-    setData(responseJSON)
-    setErrorMessage('')
+      responseJSON = await responseJSON.data.children
+      setData(responseJSON)
+      setErrorMessage('')
     if (loading === true) {
       setLoading(!loading)
     }
   }
 
   useEffect(() => {
-    setNumberOfPosts(10)
     async function newSubreddit() {
       await fetchData(props.subreddit, listing, numberOfPosts, true)
     }

@@ -42,8 +42,7 @@ export default function Search(props) {
     }
     return(
         <div className="is-flex is-flex-direction-column">
-            <h1 className='is-size-1'>{subreddit.toLocaleUpperCase()}</h1>
-            
+            <h1 className='is-size-1 has-text-light my-3'>{subreddit.toLocaleUpperCase()}</h1>
         <form className="is-flex is-justify-content-center" onSubmit={handleSubmit}>
             <input 
             value={value}
