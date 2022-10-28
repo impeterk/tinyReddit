@@ -61,13 +61,13 @@ export default function Search(props) {
         />
         <label htmlFor="subredditSearch">subreddit Search</label>
         {search == '' ? <Data subreddit={subreddit} />: (
-        searchResults ? 
+        searchResults && searchResults.data.children.length == 0 ? 
+      <p>No Results</p> :
         <ol>
         {searchResults.data.children.map(post => (
           <li key={post.data.id}><p>{post.data.subreddit}</p><br/><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
         ))}
       </ol>
-      : <p>No results</p>
       )}
         </div>
     )
