@@ -36,7 +36,7 @@ export default function Search(props) {
         onChange={handleSearch}
         placeholder='Search'
         />
-        <Data subreddit={subreddit} search={search}/>
+        {search == '' ? <Data subreddit={subreddit} /> : <p>{search}</p>}
         </div>
     )
 }
