@@ -1,60 +1,77 @@
 import { useState, useEffect } from 'react'
 import Search from './Search'
 import 'bulma/css/bulma.css'
+
 export default function Data(props) {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [numberOfPosts, setNumberOfPosts] = useState(10)
-    const [listing, setListing] = useState('hot')
-    
-    let best = 'best'
-    let hot = 'hot'
-    let newest = 'new'
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [numberOfPosts, setNumberOfPosts] = useState(10)
+  const [listing, setListing] = useState('hot')
+  const [reorderData, setReorderData] = useState(false)
 
-    useEffect(() => {
-    async function fetchData() {
-      setLoading(true)
-      let response = await fetch(`/api/r/${props.subreddit}/${listing}.json?limit=${numberOfPosts}`, {mode:'cors'}, {headers: {'Access-Control-Allow-Origin': '*'}})
-      let responseJSON = await response.json()
-      responseJSON = await responseJSON.data.children
-        setData(responseJSON)
-      setLoading(false)
+  let best = 'best'
+  let hot = 'hot'
+  let newest = 'new'
+
+  async function fetchData(subreddit, listing, numberOfPosts, loading) {
+    setLoading(loading)
+    let response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
+    let responseJSON = await response.json()
+    responseJSON = await responseJSON.data.children
+    setData(responseJSON)
+    if (loading === true) {
+      setLoading(!loading)
     }
-    fetchData()
-  }, [props.subreddit, numberOfPosts, listing])
+  }
 
-  const handleClick = () => {
+  useEffect(() => {
+    setNumberOfPosts(10)
+    async function newSubreddit() {
+      await fetchData(props.subreddit, listing, numberOfPosts, true)
+    }
+    newSubreddit()
+  }, [props.subreddit])
+
+  useEffect(() => {
+    async function loadMoreOrReorder() {
+      setReorderData(true)
+      await fetchData(props.subreddit, listing, numberOfPosts, false)
+      setReorderData(false)
+    }
+    loadMoreOrReorder()
+  }, [numberOfPosts, listing])
+
+  const handleNumberOfPosts = () => {
     setNumberOfPosts((numberOfPosts) => numberOfPosts + 5)
   }
 
-    const handleListing = event => {
-        setListing(event.target.id)
+  const handleListing = event => {
+    setListing(event.target.value)
+  }
+
+  const color = value => {
+    let tmp = 'button is-dark'
+    if (listing == value) {
+      tmp = 'button is-primary'
     }
-    
-    const color = id => {
-      let tmp = 'button is-dark'
-      if (listing == id) {
-        tmp = 'button is-primary'
-      }
-      return tmp
-   }
+    return tmp
+  }
 
-
-
-    return (
-        <div>
-            <button id={best} className={color(best)} onClick={handleListing}>best</button>
-            <button id={newest} className={color(newest)} onClick={handleListing}>new</button>
-            <button id={hot} className={color(hot)} onClick={handleListing}>hot</button>
-            <p>{props.search}</p>
-        {!data || loading ? <p>Loading...</p> :
+  return (
+    <div>
+      <button value={newest} className={color(newest)} onClick={handleListing}>new</button>
+      <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
+      <button value={best} className={color(best)} onClick={handleListing}>best</button>
+      <p>{props.search}</p>
+      {!data || loading ? <h2>Loading...</h2> :
         <ol>
-        {data.map(post => (
-          <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
+          {data.map(post => (
+            <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
           ))}
-      </ol>
-        }
-      <button onClick={handleClick}>{numberOfPosts}</button>
-      </div>
-    )
+        </ol>
+      }
+      {reorderData ? <p>Loading...</p> : null}
+      <button onClick={handleNumberOfPosts}>Load more</button>
+    </div>
+  )
 }
