@@ -71,7 +71,7 @@ export default function Data(props) {
       <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
       <button value={best} className={color(best)} onClick={handleListing}>best</button>
       </div>
-      {!data || loading ? <><Loading /><p className='is-size-2 has-text-danger'>{errorMessage}</p></> :
+      {!data || loading ? <><p className='is-size-2 has-text-danger'>{errorMessage}</p><Loading /></> :
       <div>
         <ol className='my-3'>
           {data.map(post => (
