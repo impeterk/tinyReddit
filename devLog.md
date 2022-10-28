@@ -63,3 +63,23 @@ I have only worked on simple "*search*". Simply created input field, that update
 I am finally using git branches :joy:. Lets see how long I will keep this up. 
 
 ---
+#### 28.10.2022
+Today I have implemented Search!. :thumbsup:
+
+- **Search**
+There is now option to search within specific subreddit or whole subreddit. Although, I am not sure if this function works as expected on Reddit JSON API. :confused:
+
+- **Router** 
+  in the end might not be necessary to implement. To be honest this depend on final styling and functionality
+
+- **Data fetching** 
+  I should create `<Loading />` compoment when loading data, so that the app looks nicer. This should be pretty easy thanks to bulma :smile:
+
+I have also added some "*error*" messages. When the subreddit you are trying to access does not exist. I believe that the functionality I wanted to build is there. So I will start to work on styling.
+
+**Goals**
+
+- [ ] Styling
+- [ ] Comments
+
+---
