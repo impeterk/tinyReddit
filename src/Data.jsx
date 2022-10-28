@@ -64,22 +64,22 @@ export default function Data(props) {
   }
 
   return (
-    <div>
+    <>
+      <div className='is-flex is-flex-direction-row is-justify-content-center'>
       <button value={newest} className={color(newest)} onClick={handleListing}>new</button>
       <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
       <button value={best} className={color(best)} onClick={handleListing}>best</button>
-      <p>{props.search}</p>
+      </div>
       {!data || loading ? <><h2>Loading...</h2><p>{errorMessage}</p></> :
-      <>
-        <ol>
+      <div>
+        <ol className='my-3'>
           {data.map(post => (
             <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
           ))}
         </ol>
-      <button onClick={handleNumberOfPosts}>Load more</button>
-      </>
+      {reorderData ? <p>Loading...</p> : <button className="button is-dark" onClick={handleNumberOfPosts}>Load more</button>}
+      </div>
       }
-      {reorderData ? <p>Loading...</p> : null}
-    </div>
+    </>
   )
 }

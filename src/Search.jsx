@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import {useState} from 'react'
 import Data from './Data'
+import SearchComponent from './SearchComponent'
 
 export default function Search(props) {
     const [subreddit, setSubreddit] = useState('popular')
@@ -37,38 +38,37 @@ export default function Search(props) {
         setSearch(event.target.value)
     }
     return(
-        <div>
-            <h1>{subreddit.toLocaleUpperCase()}</h1>
-        <form onSubmit={handleSubmit}>
+        <div className="is-flex is-flex-direction-column">
+            <h1 className='is-size-1'>{subreddit.toLocaleUpperCase()}</h1>
+            
+        <form className="is-flex is-justify-content-center" onSubmit={handleSubmit}>
             <input 
             value={value}
             onChange={handleChange}
             placeholder='Change subreddit'
             />
-            <button>new subreddit</button>
+            <button className="mx-3">new subreddit</button>
         </form>
-        <input
-        type="text"
-        value={search}
-        onChange={handleSearch}
-        placeholder='Search'
-        />
-        <input 
-        type="checkbox"
-        id="subredditSearch"
-        defaultChecked={false}
-        onClick={() => setSubredditOnly(checked => !checked)}
-        />
-        <label htmlFor="subredditSearch">subreddit Search</label>
-        {search == '' ? <Data subreddit={subreddit} />: (
-        (searchResults && searchResults.data.children.length == 0) || !searchResults ? 
-      <p>No Results</p> :
-        <ol>
-        {searchResults.data.children.map(post => (
-          <li key={post.data.id}><p>{post.data.subreddit}</p><br/><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
-        ))}
-      </ol>
-      )}
+        <div className='column'>
+            <input
+            type="text"
+            value={search}
+            onChange={handleSearch}
+            placeholder='Search'
+            />
+            <div className='is-flex is-justify-content-center'>
+            <input 
+            className='mx-3'
+            type="checkbox"
+            id="subredditSearch"
+            defaultChecked={false}
+            onClick={() => setSubredditOnly(checked => !checked)}
+            />
+            <label htmlFor="subredditSearch">subreddit Search</label>
+            </div>
+        </div>
+        {search == '' ? <Data subreddit={subreddit} /> : 
+        <SearchComponent searchResults={searchResults}/>}
         </div>
     )
 }
