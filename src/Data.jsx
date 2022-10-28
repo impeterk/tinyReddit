@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Search from './Search'
 import 'bulma/css/bulma.css'
+import Loading from './Loading'
 
 export default function Data(props) {
   const [data, setData] = useState([])
@@ -70,14 +71,14 @@ export default function Data(props) {
       <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
       <button value={best} className={color(best)} onClick={handleListing}>best</button>
       </div>
-      {!data || loading ? <><h2>Loading...</h2><p>{errorMessage}</p></> :
+      {!data || loading ? <><Loading /><p className='is-size-2 has-text-danger'>{errorMessage}</p></> :
       <div>
         <ol className='my-3'>
           {data.map(post => (
             <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
           ))}
         </ol>
-      {reorderData ? <p>Loading...</p> : <button className="button is-dark" onClick={handleNumberOfPosts}>Load more</button>}
+      {reorderData ? <Loading /> : <button className="button is-dark" onClick={handleNumberOfPosts}>Load more</button>}
       </div>
       }
     </>

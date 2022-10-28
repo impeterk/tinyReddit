@@ -1,8 +1,12 @@
+import Loading from './Loading'
+
 export default function SearchComponent(props) {
 
     if ((props.searchResults && props.searchResults.data.children.length == 0) || !props.searchResults) {
         return (
-            <p>No Results</p>
+            <div>
+                <Loading />
+            </div>
         )
     }
 

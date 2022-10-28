@@ -3,6 +3,7 @@ import {useState} from 'react'
 import Data from './Data'
 import SearchComponent from './SearchComponent'
 
+
 export default function Search(props) {
     const [subreddit, setSubreddit] = useState('popular')
     const [value, setValue] = useState('')
@@ -22,12 +23,14 @@ export default function Search(props) {
 
     const handleSubmit = event => {
         event.preventDefault()
+        if (value !== '') {
         setSubreddit(value)
         setValue('')
         setSearchResults(null)
         setSubredditOnly(false)
         setSearch('')
         document.getElementById('subredditSearch').checked = false
+        }
     }
 
     const handleChange = event => {
