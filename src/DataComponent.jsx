@@ -1,7 +1,7 @@
 import Data from "./Data";
 
 export default function DataComponent(props) {
-
+console.log(props.data)
     return(
         <div className="card is-desktop my-1">
             <header className="card-header">
@@ -21,7 +21,11 @@ export default function DataComponent(props) {
     </figure> }
   </div> : null }
   <div className="card-content">
-    <div className="media">
+  <div class="media">
+      <div class="media-left is-flex">
+          <p className="is-size-2 mx-2">&#129153;</p>
+          <p className="is-size-4 is-flex is-align-items-center">{props.data.data.score}</p>
+      </div>
       <div className="media-content">
         <p className="title is-4">{props.data.data.author}</p>
         <p className="subtitle is-6">{props.data.data.subreddit}</p>
