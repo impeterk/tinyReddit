@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Search from './Search'
 import 'bulma/css/bulma.css'
 import Loading from './Loading'
+import Button from './Button'
 
 export default function Data(props) {
   const [data, setData] = useState([])
@@ -51,24 +52,12 @@ export default function Data(props) {
     setNumberOfPosts((numberOfPosts) => numberOfPosts + 5)
   }
 
-  const handleListing = event => {
-    setListing(event.target.value)
-  }
-
-  const color = value => {
-    let tmp = 'button is-dark'
-    if (listing == value) {
-      tmp = 'button is-primary'
-    }
-    return tmp
-  }
-
   return (
     <>
       <div className='is-flex is-flex-direction-row is-justify-content-center'>
-      <button value={newest} className={color(newest)} onClick={handleListing}>new</button>
-      <button value={hot} className={color(hot)} onClick={handleListing}>hot</button>
-      <button value={best} className={color(best)} onClick={handleListing}>best</button>
+      <Button value='new' setListing={setListing} listing={listing} />
+      <Button value='hot' setListing={setListing} listing={listing} />
+      <Button value='best' setListing={setListing} listing={listing} />
       </div>
       {!data || loading ? <><p className='is-size-2 has-text-danger'>{errorMessage}</p><Loading /></> :
       <div>

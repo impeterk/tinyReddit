@@ -8,17 +8,16 @@ export default function Search(props) {
     const [subreddit, setSubreddit] = useState('popular')
     const [value, setValue] = useState('')
     const [search, setSearch] = useState('')
-    const [subredditOnly, setSubredditOnly] = useState(false)
     const [searchResults, setSearchResults] = useState(null)
 
     useEffect(() => {
         async function showSearchResults() {
-            let response = await fetch(`/api${subredditOnly ? `/r/${subreddit}/` : `/`}search.json?q=${search}`)
+            let response = await fetch(`/api/search.json?q=${search}`)
             let responseJSON = await response.json()
             setSearchResults(responseJSON)
         }
         showSearchResults()
-    },[search, subredditOnly])
+    },[search])
 
 
     const handleSubmit = event => {
@@ -27,9 +26,7 @@ export default function Search(props) {
         setSubreddit(value)
         setValue('')
         setSearchResults(null)
-        setSubredditOnly(false)
         setSearch('')
-        document.getElementById('subredditSearch').checked = false
         }
     }
 
@@ -58,16 +55,6 @@ export default function Search(props) {
             onChange={handleSearch}
             placeholder='Search'
             />
-            <div className='is-flex is-justify-content-center'>
-            <input 
-            className='mx-3'
-            type="checkbox"
-            id="subredditSearch"
-            defaultChecked={false}
-            onClick={() => setSubredditOnly(checked => !checked)}
-            />
-            <label htmlFor="subredditSearch">subreddit Search</label>
-            </div>
         </div>
         {search == '' ? <Data subreddit={subreddit} /> : 
         <SearchComponent searchResults={searchResults}/>}
