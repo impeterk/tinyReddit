@@ -3,6 +3,7 @@ import Search from './Search'
 import 'bulma/css/bulma.css'
 import Loading from './Loading'
 import Button from './Button'
+import DataComponent from './DataComponent'
 
 export default function Data(props) {
   const [data, setData] = useState([])
@@ -31,7 +32,6 @@ export default function Data(props) {
       setLoading(!loading)
     }
   }
-
   useEffect(() => {
     async function newSubreddit() {
       await fetchData(props.subreddit, listing, numberOfPosts, true)
@@ -63,7 +63,7 @@ export default function Data(props) {
       <div>
         <ol className='my-3'>
           {data.map(post => (
-            <li key={post.data.id}><a href={`https://reddit.com${post.data.permalink}`} target="_blank">{post.data.title}</a></li>
+          <DataComponent key={post.data.id}data={post}/>
           ))}
         </ol>
       {reorderData ? <Loading /> : <button className="button is-dark" onClick={handleNumberOfPosts}>Load more</button>}

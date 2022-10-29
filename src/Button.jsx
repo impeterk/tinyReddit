@@ -1,4 +1,3 @@
-import 'bulma/css/bulma.css'
 
 export default function Button(props) {
     const handleListing = event => {
