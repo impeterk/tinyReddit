@@ -3,7 +3,9 @@ import Search from './Search'
 import 'bulma/css/bulma.css'
 import Loading from './Loading'
 import Button from './Button'
-import DataComponent from './DataComponent'
+import PostComponent from './PostComponent'
+import SubredditList from './SubredditList'
+
 
 export default function Data(props) {
   const [data, setData] = useState([])
@@ -23,7 +25,7 @@ export default function Data(props) {
     try {
     response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
   } catch(err) {
-      errorMessage
+    errorMessage
   }
     let responseJSON = await response.json()
       responseJSON = await responseJSON.data.children
@@ -52,6 +54,7 @@ export default function Data(props) {
     setNumberOfPosts((numberOfPosts) => numberOfPosts + 5)
   }
 
+
   return (
     <>
       <div className='is-flex is-flex-direction-row is-justify-content-center'>
@@ -59,14 +62,21 @@ export default function Data(props) {
       <Button value='hot' setListing={setListing} listing={listing} />
       <Button value='best' setListing={setListing} listing={listing} />
       </div>
-      {!data || loading ? <><p className='is-size-2 has-text-danger'>{errorMessage}</p><Loading /></> :
-      <div>
-        <ol className='my-3'>
-          {data.map(post => (
-          <DataComponent key={post.data.id}data={post}/>
-          ))}
-        </ol>
-      {reorderData ? <Loading /> : <button className="button is-dark" onClick={handleNumberOfPosts}>Load more</button>}
+      {!data || loading ? <><p className='is-size-2 has-text-danger'>{}</p><Loading /></> :
+      <div className='columns is-multiline'>
+          <div className='column is-three-quarters my-3'>
+            <ul>
+              {data.map(post => (
+              <PostComponent key={post.data.id} title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit}/>
+              ))}
+            </ul>
+            <div className='column is-full'>
+              {reorderData ? <Loading /> : <button className="button is-large is-fullwidth is-link has-text-weight-bold" onClick={handleNumberOfPosts}>Load more</button>}
+            </div>
+          </div>
+        <div className='column my-3 is-one-quarter'>
+          <SubredditList />
+        </div> 
       </div>
       }
     </>

@@ -2,22 +2,13 @@ import { useEffect } from 'react'
 import {useState} from 'react'
 import Data from './Data'
 import SearchComponent from './SearchComponent'
-
+import Navbar from './NavBar'
 
 export default function Search(props) {
     const [subreddit, setSubreddit] = useState('popular')
     const [value, setValue] = useState('')
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState(null)
-
-    useEffect(() => {
-        async function showSearchResults() {
-            let response = await fetch(`/api/search.json?q=${search}`)
-            let responseJSON = await response.json()
-            setSearchResults(responseJSON)
-        }
-        showSearchResults()
-    },[search])
 
 
     const handleSubmit = event => {
@@ -37,8 +28,10 @@ export default function Search(props) {
     const handleSearch = event => {
         setSearch(event.target.value)
     }
+
     return(
         <div className="is-flex is-flex-direction-column">
+            <Navbar subreddit={subreddit}/>
             <h1 className='is-size-1 has-text-light my-3'>{subreddit.toLocaleUpperCase()}</h1>
         <form className="is-flex is-justify-content-center" onSubmit={handleSubmit}>
             <input 
@@ -49,7 +42,7 @@ export default function Search(props) {
             <button className="mx-3">new subreddit</button>
         </form>
         <div className='column'>
-            <input
+        <input
             type="text"
             value={search}
             onChange={handleSearch}
@@ -57,7 +50,7 @@ export default function Search(props) {
             />
         </div>
         {search == '' ? <Data subreddit={subreddit} /> : 
-        <SearchComponent searchResults={searchResults}/>}
+        <SearchComponent searchResults={searchResults} search={search} />}
         </div>
     )
 }
