@@ -6,6 +6,7 @@ import Button from "../Button"
 // Navigation bar with search, new subreddit and Listing options
 export default function Navbar(props) {
   const [value, setValue] = useState('')
+  const [searchText, setSearchText] = useState('')
 
   // Interacts with menu for mobile. Opens and close on Click
     const openCloseMenu = () => {
@@ -21,7 +22,7 @@ export default function Navbar(props) {
     if (value !== '') {
     props.setSubreddit(value)
     setValue('')
-    // setSearchResults(null)
+    setSearchText('')
     props.setSearch('')
     }
 }
@@ -32,7 +33,8 @@ export default function Navbar(props) {
 
   // Handles search change
   const handleSearch = event => {
-    props.setSearch(event.target.value)
+    setSearchText(event.target.value)
+    props.setSearch(searchText)
   }
 
     return (
@@ -72,7 +74,7 @@ export default function Navbar(props) {
     </div>
     <div className="navbar-end mx-5">
       <div className="navbar-item">
-        <input className="input is-info" type="text" onChange={handleSearch} placeholder="Search" />
+        <input className="input is-info" type="text" value={searchText} onChange={handleSearch} placeholder="Search" />
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import 'bulma/css/bulma.css'
 import Loading from './Loading'
 import PostComponent from './PostComponent'
 
@@ -11,8 +10,9 @@ export default function Data(props) {
   const [reorderData, setReorderData] = useState(false)
   const errorMessage = "Try different subreddit!"
 
-  // fetches data from reddit JSON API
-  async function fetchData(subreddit, listing, numberOfPosts, loading) {
+
+  // fetches subredditdata from reddit JSON API
+  async function fetchSubredditData(subreddit, listing, numberOfPosts, loading) {
     setLoading(loading)
     let response
     try {
@@ -27,27 +27,32 @@ export default function Data(props) {
       setLoading(!loading)
     }
   }
-  useEffect(() => {
-    async function newSubreddit() {
-      await fetchData(props.subreddit, props.listing, numberOfPosts, true)
-    }
-    newSubreddit()
-  }, [props.subreddit])
 
-  useEffect(() => {
-    async function loadMoreOrReorder() {
-      setReorderData(true)
-      await fetchData(props.subreddit, props.listing, numberOfPosts, false)
-      setReorderData(false)
-    }
-    loadMoreOrReorder()
-  }, [numberOfPosts, props.listing])
-
+  // add 5 to posts displayed
   const handleNumberOfPosts = () => {
     setNumberOfPosts((numberOfPosts) => numberOfPosts + 5)
   }
 
 
+  //calls fetchsubreddit data function with loading set to true
+  useEffect(() => {
+    async function newSubreddit() {
+      await fetchSubredditData(props.subreddit, props.listing, numberOfPosts, true)
+    }
+    newSubreddit()
+  }, [props.subreddit])
+
+  //calls fetchsubreddit data function with loading set to true
+  useEffect(() => {
+    async function loadMoreOrReorder() {
+      setReorderData(true)
+      await fetchSubredditData(props.subreddit, props.listing, numberOfPosts, false)
+      setReorderData(false)
+    }
+    loadMoreOrReorder()
+  }, [numberOfPosts, props.listing])
+
+  console.log(data)
   return (
     <>
       {!data || loading ? <Loading /> :
@@ -55,9 +60,10 @@ export default function Data(props) {
           <div>
             <ul>
               {data.map(post => (
-              <PostComponent key={post.data.id} title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit}/>
+              <li className="my-1" key={post.data.id} ><PostComponent title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit}/></li>
               ))}
             </ul>
+
             <div>
               {reorderData ? <Loading /> : <button className="button is-large is-fullwidth is-link has-text-weight-bold" onClick={handleNumberOfPosts}>Load more</button>}
             </div>

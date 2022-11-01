@@ -1,7 +1,7 @@
 export default function DataComponent(props) {
 // console.log(props.data)
     return(
-        <div className="card my-1">
+        <div className="card">
             <header className="card-header">
             <p className="card-header-title">
             {props.title}
