@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import {useState} from 'react'
 import Data from './Data'
 import SearchComponent from './SearchComponent'
-import Navbar from './NavBar'
+import Navbar from './components/NavBar'
 
 export default function Search(props) {
     const [subreddit, setSubreddit] = useState('popular')

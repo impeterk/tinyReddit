@@ -13,7 +13,7 @@ export default function SubredditList(props) {
 
     return(
         <div className="my-1">
-            <nav className="box is-sticky">
+            <nav className="box">
             {list.map(item => (
                 <ul>
                 <li key={item}><p key={item} className="box my-1 has-background-info-light has-text-info-dark has-text-weight-bold is-size-4">{item}</p></li>
