@@ -1,8 +1,12 @@
 export default function Footer(props) {
+    let modal = document.getElementById("modal")
 
-    const handleModal = () => {
-        let modal = document.getElementById("modal")
-        modal.className === "modal is-active"
+    const openModal = () => {
+        modal.className = "modal is-active"
+    }
+
+    const closeModal = () => {
+        modal.className = "modal"    
     }
 
 
@@ -14,11 +18,13 @@ export default function Footer(props) {
                 <div id="modal" className="modal">
                     <div className="modal-background"></div>
                     <div className="modal-content">
-                        <p>Modal works</p>
+                        <div className="box">
+                            <p className="is-size-4">About us</p>
+                        </div>
                     </div>
-                    <button className="modal-close is-large" aria-label="close"></button>
+                    <button onClick={closeModal} className="modal-close is-large" aria-label="close"></button>
                 </div>
-                <a id="modalButton" onClick={handleModal}>About us</a>
+                <a id="modalButton" className="is-size-5" onClick={openModal}>About us</a>
             </div>
         </footer>
     )

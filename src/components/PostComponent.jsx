@@ -18,7 +18,7 @@ export default function DataComponent(props) {
             <>
           <div className="column is-two-thirds card-image">
                 {props.is_video ?
-              <video className="image is-clickable" height={props.media.reddit_video.height} controls>
+              <video className="image is-clickable m-1" height={props.media.reddit_video.height} controls>
                 <source src={props.media.reddit_video.fallback_url} />
               </video>
                 : 
