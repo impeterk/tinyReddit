@@ -19,12 +19,12 @@ export default function Footer(props) {
                     <div className="modal-background"></div>
                     <div className="modal-content">
                         <div className="box">
-                            <p className="is-size-4">About us</p>
+                            <p className="is-size-4">About React<span className="has-text-link">2</span>Reddit</p>
                         </div>
                     </div>
                     <button onClick={closeModal} className="modal-close is-large" aria-label="close"></button>
                 </div>
-                <a id="modalButton" className="is-size-5" onClick={openModal}>About us</a>
+                <a id="modalButton" className="is-size-5" onClick={openModal}>React<span className="has-text-link">2</span>Reddit</a>
             </div>
         </footer>
     )

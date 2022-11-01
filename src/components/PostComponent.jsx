@@ -18,15 +18,15 @@ export default function DataComponent(props) {
             <>
           <div className="column is-two-thirds card-image">
                 {props.is_video ?
-              <video className="image is-clickable m-1" height={props.media.reddit_video.height} controls>
+              <video className="image is-clickable m-2" height={props.media.reddit_video.height} controls>
                 <source src={props.media.reddit_video.fallback_url} />
               </video>
                 : 
-                  <figure className="image m-1 is-4by3">
+                  <figure className="image m-2 is-4by3">
                     <img src={props.url} alt="Placeholder image" />
                   </figure> }
           </div> 
-                  <div className="card-content my-1 column mr-3">
+                  <div className="card-content my-3 column mr-3">
                     <div className="media">
                       <div className="media-content">
                         <p className="title is-3">{props.title}</p>
