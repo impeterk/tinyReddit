@@ -1,9 +1,10 @@
 import Navbar from './components/NavBar'
 import Data from './Data'
-import SubredditList from './SubredditList'
+import SubredditList from './components/SubredditList'
 import Search from './components/Search'
 import {useState} from 'react'
 import 'bulma/css/bulma.css'
+import Footer from './components/Footer'
 
 function App() {
   const [subreddit, setSubreddit] = useState('popular')
@@ -13,8 +14,8 @@ function App() {
   return (
     <div className="App">
     <Navbar subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch} listing={listing} setListing={setListing} search={search}/>
-    <div className='columns mx-1 py-1'>
-      <div className='column is-three-quarters  my-1 px-1'>
+    <div className='columns mx-1 py-1 is-desktop'>
+      <div className='column is-8 is-offset-1 my-1 px-1'>
         {search.length !== 0 ? 
         <Search search={search} /> :
         <Data subreddit={subreddit} listing={listing} /> 
@@ -24,6 +25,7 @@ function App() {
         <SubredditList subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch}/>
       </div>
     </div>
+    <Footer />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
-import Loading from '../Loading'
-import PostComponent from "../PostComponent"
+import Loading from '../Helpers/Loading'
+import PostComponent from "./PostComponent"
 
 export default function Search(props) {
     const [searchResults, setSearchResults] = useState(null)

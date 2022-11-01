@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Loading from './Loading'
-import PostComponent from './PostComponent'
+import Loading from './Helpers/Loading'
+import PostComponent from './components/PostComponent'
 
 
 export default function Data(props) {
@@ -52,7 +52,7 @@ export default function Data(props) {
     loadMoreOrReorder()
   }, [numberOfPosts, props.listing])
 
-  console.log(data)
+
   return (
     <>
       {!data || loading ? <Loading /> :
@@ -60,12 +60,14 @@ export default function Data(props) {
           <div>
             <ul>
               {data.map(post => (
-              <li className="my-1" key={post.data.id} ><PostComponent title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit}/></li>
+              <li className="my-1" key={post.data.id} ><PostComponent title={post.data.title} selftext={post.data.selftext} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit} thumbnail={post.data.thumbnail} permalink={post.data.permalink}/></li>
               ))}
             </ul>
 
             <div>
-              {reorderData ? <Loading /> : <button className="button is-large is-fullwidth is-link has-text-weight-bold" onClick={handleNumberOfPosts}>Load more</button>}
+              {reorderData ? <Loading /> : <button className="button is-large is-fullwidth is-link has-text-weight-bold" onClick={handleNumberOfPosts}>	
+&#129155; Load more 	
+&#129155;</button>}
             </div>
           </div>
       </div>

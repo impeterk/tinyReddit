@@ -1,4 +1,7 @@
+import '../Helpers/SubredditList.css'
+
 import {useState,useEffect} from 'react'
+
 
 export default function SubredditList(props) {
     const [list, setList] = useState(['popular', 'unixporn', 'unix', 'esports', 'fashion', 'animals'])
@@ -6,7 +9,7 @@ export default function SubredditList(props) {
 
     useEffect(() => {
         if (!list.includes(props.subreddit)) {
-        setList(items => [...items, (props.subreddit)])
+        setList(items => [(props.subreddit), ...items])
         }
     }, [props.subreddit])
 
@@ -16,15 +19,19 @@ export default function SubredditList(props) {
     }
 
     return(
-        <div>
-            <nav className="box my-1">
+        <div className='stickyList'>
+        <aside className='box is-fullwidth'>
+            <div>
                 <p className='is-size-3 is-uppercase has-text-centered has-text-link has-text-weight-semibold'>subreddit list</p>
+            </div>
+            <nav className="my-1">
                 <ul>
             {list.map(item => (
                 <li key={item}><button key={item} onClick={handleClick} value={item} className="button is-fullwidth is-large p-6 my-2 is-info is-light has-text-weight-bold is-size-4 has-text-centered">r/{item}</button></li>
                 ))}
                 </ul>
             </nav>
+        </aside>
         </div>
     )
 }
