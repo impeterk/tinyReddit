@@ -1,7 +1,7 @@
 .stickyList {
     position: fixed;
     overflow-y: scroll;
-    max-height: 100vh;
+    max-height: 90vh;
 }
 ::-webkit-scrollbar {
     width: 10px;

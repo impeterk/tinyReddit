@@ -19,7 +19,7 @@ export default function SubredditList(props) {
     }
 
     return(
-        <div className='stickyList'>
+        <div className=''>
         <aside className='box is-shadowless is-fullwidth'>
             <div>
                 <p className='is-size-3 is-uppercase has-text-centered has-text-link has-text-weight-semibold'>subreddit list</p>
