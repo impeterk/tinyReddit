@@ -17,7 +17,7 @@ export default function DataComponent(props) {
               <p className="is-size-4 is-flex is-align-items-center">{props.score}</p>
             </div>
           </div> 
-           <p className="card-header-title is-size-4">
+           <p className="card-header-title is-size-4 is-clipped">
             {props.author}
            </p>
         </header>
@@ -49,8 +49,8 @@ export default function DataComponent(props) {
                   <div className="card-content my-3 column mr-3">
                     <div className="media">
                       <div className="media-content">
-                        <p className="title is-3">{props.title}</p>
-                        <p className="subtitle is-6">r/{props.subreddit}</p>
+                        <p className="title is-3 is-clipped">{props.title}</p>
+                        <p className="subtitle is-6 is-clipped">r/{props.subreddit}</p>
                       </div>
                     </div>
                   </div>
@@ -64,7 +64,7 @@ export default function DataComponent(props) {
                   </div>
                 </div> }     
         </div> 
-          <div className="content mx-3">
+          <div className="content mx-3 is-clipped">
             <p>{props.selftext}</p>
           </div>
           <div className="is-flex is-justify-content-end mx-3">
