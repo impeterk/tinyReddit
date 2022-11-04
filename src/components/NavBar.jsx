@@ -40,7 +40,7 @@ export default function Navbar(props) {
     return (
         <nav className="navbar is-light is-fixed-top " role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
-    <p className="is-size-3 has-text-weight-semibold mx-5">React<span className="has-text-info has-text-weight-bold">2</span>Reddit</p>
+    <p className="is-size-3 has-text-weight-semibold mx-5">{`<`}React<span className="has-text-info has-text-weight-bold">2</span>Reddit{` />`}</p>
 
     <a role="button" className="navbar-burger" id="navBurger" onClick={openCloseMenu} aria-label="menu" aria-expanded="false" data-target="navbarMenu">
       <span aria-hidden="true"></span>

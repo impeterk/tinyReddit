@@ -15,10 +15,10 @@ export default function Footer(props) {
                 <div className="modal-background"></div>
                 <div className="modal-card">
                     <header className="modal-card-head">
-                        <p className="modal-card-title has-text-centered is-size-3 has-text-weight-semibold">{`<`}React<span className="has-text-link">2</span>Reddit{` />`}</p>
+                        <p className="modal-card-title has-text-centered is-size-3 has-text-weight-semibold">{`<`}React<span className="has-text-info has-text-weight-bold">2</span>Reddit{` />`}</p>
                     </header>
                     <section className="modal-card-body">
-                        <p className="is-size-3 mb-5">About React<span className="has-text-link">2</span>Reddit</p>
+                        <p className="is-size-3 mb-5">About {`<`}React<span className="has-text-info has-text-weight-bold">2</span>Reddit{` />`}</p>
                         <p className="content has-text-justified">
                             I have created this simple application as project for <a className="is-link" href="https://codecademy.com" target="_blank">CodeCademy</a> <strong>Front-end developer</strong> career path. <a href="https://reactjs.org/" target="_blank"><img className="image is-128x128 is-pulled-right"src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="React logo"/></a>This project was build using {`<React />`} as our Front end framework. This is simple reddit client, where we get browse reddit thanks to JSON API. Using this API instead of Reddits supported and well documented API unfortunately means, that we are limited with our features. We can not login, nor comment or like. <br/>
                             <strong>What can we do?</strong> We can still browse the reddit, change subreddit or search for posts. We can list them by "best", "hot" or "new". If we the post we see, we can redirect ourselves to reddit directly and interact there. <br/>
