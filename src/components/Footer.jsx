@@ -12,7 +12,7 @@ export default function Footer(props) {
     return (
         <div>
             <div id="modal" className="modal">
-                <div className="modal-background"></div>
+                <div className="modal-background" onClick={closeModal}></div>
                 <div className="modal-card">
                     <header className="modal-card-head">
                         <p className="modal-card-title has-text-centered is-size-3 has-text-weight-semibold">{`<`}React<span className="has-text-info has-text-weight-bold">2</span>Reddit{` />`}</p>
