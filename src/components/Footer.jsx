@@ -1,17 +1,17 @@
 export default function Footer(props) {
 
     const openModal = () => {
-        document.getElementById("modal").className = "modal is-active"
+        document.getElementById("footerModal").className = "modal is-active"
     }
 
     const closeModal = () => {
-        document.getElementById("modal").className = "modal"
+        document.getElementById("footerModal").className = "modal"
     }
 
 
     return (
         <div>
-            <div id="modal" className="modal">
+            <div id="footerModal" className="modal">
                 <div className="modal-background" onClick={closeModal}></div>
                 <div className="modal-card">
                     <header className="modal-card-head">

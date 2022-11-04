@@ -1,5 +1,13 @@
 export default function DataComponent(props) {
 
+  const openModal = () => {
+    document.getElementById(props.id).className="modal is-active"
+  }
+  const closeModal = () => {
+    document.getElementById(props.id).className="modal"
+  }
+
+
     return(
       <div className="card">
          <header className="card-header is-flex is-align-items-center">
@@ -22,9 +30,21 @@ export default function DataComponent(props) {
                 <source src={props.media.reddit_video.fallback_url} />
               </video>
                 : 
-                  <figure className="image m-2 is-4by3">
-                    <img src={props.url} alt="Placeholder image" />
-                  </figure> }
+                <div>
+                  <figure className="image is-clickable m-2 is-4by3">
+                    <img onClick={openModal} src={props.url} alt="Placeholder image" />
+                  </figure> 
+                  <div id={props.id} className="modal">
+                  <div onClick={closeModal} className="modal-background"></div>
+                  <div className="modal-content">
+                    <p className="image">
+                      <img src={props.url} alt="media image" />
+                    </p>
+                  </div>
+                  <button onClick={closeModal} className="modal-close is-large" aria-label="close"></button>
+                </div>
+                </div>
+                }
           </div> 
                   <div className="card-content my-3 column mr-3">
                     <div className="media">

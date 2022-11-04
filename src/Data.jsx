@@ -60,7 +60,7 @@ export default function Data(props) {
           <div>
             <ul>
               {data.map(post => (
-              <li className="my-1" key={post.data.id} ><PostComponent title={post.data.title} selftext={post.data.selftext} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit} thumbnail={post.data.thumbnail} permalink={post.data.permalink}/></li>
+              <li className="my-1" key={post.data.id} ><PostComponent id={post.data.id} title={post.data.title} selftext={post.data.selftext} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit} thumbnail={post.data.thumbnail} permalink={post.data.permalink}/></li>
               ))}
             </ul>
 
