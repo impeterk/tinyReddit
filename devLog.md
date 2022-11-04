@@ -83,3 +83,40 @@ I have also added some "*error*" messages. When the subreddit you are trying to 
 - [ ] Comments
 
 ---
+#### 01.11.2022
+For past few days I have been working quite a lot a have done pretty much everything regarding the app. Now we have our final styling, search is working as well as changing subreddits. I have also added list of subreddits that dinamically updates based on last subreddit visited.
+
+**Done**
+- [x] subreddit/ change subreddit
+- [x] render data in `<post />` component. Display no image / image / video based on data of each post
+- [x] search
+- [x] list of past subreddits
+- [x] styling
+
+**Problems**
+- After searching, and then deleting search string, data is not re-rendered based on subreddit data, but rather searched data in different order.
+- I am not using Redux. Which I might want to rewrite the whole apvp using redux, since it might help a lot.
+- I have rewriten whole app, since in the beggining I was not really separating concers, but I was just building features on top of one another. In the end, it was a big mess. In order to get the app straight I had to rewrite it with *separation of concerns* in mind. I was able to handle this, pretty well. But there is for sure still room for improvement. For expample the `<data />` component is responsible for rendering `<post />`. This should be avioded.
+- I am not displaying data for each posts. (e.g. comments) This is one the featueres That I would like to add in next *release*.
+- React-router has not been implented as well. Another feature for "*redux version*".
+
+---
+
+#### 04.11.2022
+
+**Ready to build**
+
+For the past few days I was not really working on the APP. However today was productive. I am readdy to build this application. I believe every feature That I have decited to build into this *initial version* is ready. :grin:
+The application is far from perfect. And it always will be... Main goal for now is to build it and test it in real world. I have quite an extensive list of features that I would love to implement into the application in the next versions. For now, I am ready to share my work with the world. :smile:
+
+**Goals Done**
+- [x] Styling
+- [x] Data fetching
+- [x] Search (broken?)
+- [x] Changing subreddit
+- [x] Comments on whole code
+
+**Goals for further version**
+- [ ] Redux
+- [ ] React Router
+- [ ] Post specific Data fetching
