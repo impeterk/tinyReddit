@@ -39,8 +39,9 @@ export default function Footer(props) {
                         <hr/>
                         <p className="is-size-3 mb-5">About <span className="has-text-link">Me</span></p>
                         <p className="content has-text-justified">
-                            I am 26 years old developer form Europe. This is my first React project builded from scratch. I am on my way to become full stack developer within near future. &#128521;<br/>
-                            If you like what you see and would like more, better projects, consider leaving feedback on my github profile. This will motivate me to push myself even more. 
+                            <strong>Hi everyone &#128512;</strong><br/>
+                            I am 26 years old developer from Europe. This is my first React project builded from scratch. I am on my way to become full stack developer within near future. &#128521;<br/>
+                            I have started my journey in february 2022, when I joined Codecademy. As of right now, I am working on side projects in my spare time. I am still learning a lot and grinding hard on Codecademy to earn certificate. <br/> If you like what you see and would like more, better projects, consider leaving feedback on my github profile. This will motivate me to push myself even more. 
                         </p>
                     </section>
                     <footer className="modal-card-foot">
