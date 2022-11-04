@@ -16,7 +16,7 @@ export default function Data(props) {
     setLoading(loading)
     let response
     try {
-    response = await fetch(`/api/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
+    response = await fetch(`https://reddit.com/r/${subreddit}/${listing}.json?limit=${numberOfPosts}`, { mode: 'cors' }, { headers: { 'Access-Control-Allow-Origin': '*' } })
   } catch(err) {
     errorMessage
   }

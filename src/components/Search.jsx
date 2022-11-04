@@ -7,7 +7,7 @@ export default function Search(props) {
 
     // fetches search data from api 
       async function showSearchResults() {
-        let response = await fetch(`/api/search.json?q=${props.search}`)
+        let response = await fetch(`https://reddit.com/search.json?q=${props.search}`)
         let responseJSON = await response.json()
         setSearchResults(responseJSON)
     }
