@@ -1,3 +1,5 @@
+
+// footer component with links. About Application is Modal
 export default function Footer(props) {
 
     const openModal = () => {

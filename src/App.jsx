@@ -3,11 +3,12 @@ import Data from './Data'
 import SubredditList from './components/SubredditList'
 import Search from './components/Search'
 import { useState } from 'react'
-import 'bulma/css/bulma.css'
 import Footer from './components/Footer'
 import Cookies from './components/Cookies'
 
 function App() {
+
+  // global states. Not the best solution, but better then before
   const [subreddit, setSubreddit] = useState('popular')
   const [search, setSearch] = useState('')
   const [listing, setListing] = useState('hot')

@@ -1,6 +1,8 @@
 import '../Helpers/Cookies.css'
 
 export default function Cookies(props) {
+
+    
     const removeCookies = () => {
         document.getElementById("cookies").remove()
     }

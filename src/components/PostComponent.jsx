@@ -1,5 +1,9 @@
+
+
+// renders data based on props pased from parent component
 export default function DataComponent(props) {
 
+  //handles modal opening on images
   const openModal = () => {
     document.getElementById(props.id).className="modal is-active"
   }
@@ -22,6 +26,7 @@ export default function DataComponent(props) {
            </p>
         </header>
         <div className="columns is-desktop">
+          {/* only renders media if the media is video or image. Other types brakes the component */}
             {props.post_hint == "image"  || props.post_hint == "hosted:video" ? 
             <>
           <div className="column is-two-thirds card-image">
@@ -31,6 +36,7 @@ export default function DataComponent(props) {
               </video>
                 : 
                 <div>
+                  {/* Only clicking on image displays Modal */}
                   <figure className="image is-clickable m-2 is-4by3">
                     <img onClick={openModal} src={props.url} alt="Placeholder image" />
                   </figure> 

@@ -1,10 +1,11 @@
 import {useState,useEffect} from 'react'
 
-
+// sidebar with subreddits for quick access
 export default function SubredditList(props) {
+
     const [list, setList] = useState(['popular', 'unixporn', 'unix', 'esports', 'fashion', 'animals'])
 
-
+// adds new subreddit into the list
     useEffect(() => {
         if (!list.includes(props.subreddit)) {
         setList(items => [(props.subreddit), ...items])
