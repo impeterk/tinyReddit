@@ -1,13 +1,14 @@
 import {useState, useEffect} from 'react'
 import Loading from '../Helpers/Loading'
 import PostComponent from "./PostComponent"
+import {Api} from "../api/Api"
 
 export default function Search(props) {
     const [searchResults, setSearchResults] = useState(null)
 
     // fetches search data from api 
       async function showSearchResults() {
-        let response = await fetch(`https://reddit.com/search.json?q=${props.search}`)
+        let response = await fetch(`${Api}/search.json?q=${props.search}`)
         let responseJSON = await response.json()
         setSearchResults(responseJSON)
     }
