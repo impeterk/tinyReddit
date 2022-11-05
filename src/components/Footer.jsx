@@ -53,7 +53,7 @@ export default function Footer(props) {
             </div>
             <footer className="footer py-3">
                 <div className="content has-text-centered">
-                    <a className="mx-3 is-size-5" href="https://github.com/impeterk/tinyReact" target="_blank">Github</a>
+                    <a className="mx-3 is-size-5" href="https://github.com/impeterk/tinyReddit" target="_blank">Github</a>
                     <a id="modalButton" className="is-size-5" onClick={openModal}>React<span className="has-text-link">2</span>Reddit</a>
                 </div>
             </footer>

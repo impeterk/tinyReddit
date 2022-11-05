@@ -2,7 +2,7 @@
 # routing internally.
 [[redirects]]
   from = "*"
-  to = "react2reddit.netlify.app/"
+  to = "*"
   status = 200
 
 [[headers]]
