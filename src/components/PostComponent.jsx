@@ -32,13 +32,13 @@ export default function DataComponent(props) {
           <div className="column is-two-thirds card-image">
                 {props.is_video ?
               <video className="image is-clickable m-2" height={props.media.reddit_video.height} controls>
-                <source src={props.media.reddit_video.fallback_url} />
+                <source src={props.media.reddit_video.fallback_url} type="video/mp4"/>
               </video>
                 : 
                 <div>
                   {/* Only clicking on image displays Modal */}
                   <figure className="image is-clickable m-2 is-4by3">
-                    <img onClick={openModal} src={props.url} alt="Placeholder image" />
+                    <img onClick={openModal} src={props.url} loading="lazy" alt="Placeholder image" />
                   </figure> 
                   <div id={props.id} className="modal">
                   <div onClick={closeModal} className="modal-background"></div>

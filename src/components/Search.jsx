@@ -28,7 +28,7 @@ export default function Search(props) {
                 </div> :
             <ol>
             {searchResults.data.children.map(post => (
-                 <PostComponent key={post.data.id} id={post.data.id} permalink={post.data.permalink}title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit}/>
+                 <PostComponent key={post.data.id} id={post.data.id} permalink={post.data.permalink}title={post.data.title} post_hint={post.data.post_hint} is_video={post.data.is_video} media={post.data.media} data={post} url={post.data.url} score={post.data.score} author={post.data.author} subreddit={post.data.subreddit} thumbnail={post.data.thumbnail}/>
             ))}
             </ol>
             }
