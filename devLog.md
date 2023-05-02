@@ -120,3 +120,33 @@ The application is far from perfect. And it always will be... Main goal for now 
 - [ ] Redux
 - [ ] React Router
 - [ ] Post specific Data fetching
+
+---
+
+### 02.05.2023
+
+#### RRRR 🏴‍☠️
+<sup>*imagine pirate*</sup>
+
+
+**RRRR** stands for React + Reddit + Redux + React Router
+
+My goal for the next 4 weeks, that means until start of june, is to add Redux to the application as the global state management, or store if you will.As well as React router, for better user experience, but mainly for more functionality.
+Current state of the application is pretty broken. Here is non-exhaustive list of what is currently wrong with the application:
+
+- You can use the application, but it is clunky at best
+- you **can not** render comments for any of the posts
+- Data state is broken after searching for something
+- navigation is unintuitive on mobile devices
+- icons are not working
+
+What can I fix and how?
+
+Firstly I should reconsider the implementation of the whole application. Since at least some of the features, such as _search_ are built in to the React router.
+This would mean, that some components might get simplyfied. --hopefully
+
+Once the router is correctly implemented, I should be able to properly render each post and it's comments on separate page, well in this case as separate components.
+
+As of right now, state and props are creating amazing waterfall from top to `<App />` to each separate component. This is pretty bad, to say at least. Redux should help with this quite a bit.
+Redux should also help with creating `async` parts (slices) and components them self should get smaller and less complex. However this would also mean that I am going to have more files and more splitted code,
+which might be helpful as well.
