@@ -150,3 +150,17 @@ Once the router is correctly implemented, I should be able to properly render ea
 As of right now, state and props are creating amazing waterfall from top to `<App />` to each separate component. This is pretty bad, to say at least. Redux should help with this quite a bit.
 Redux should also help with creating `async` parts (slices) and components them self should get smaller and less complex. However this would also mean that I am going to have more files and more splitted code,
 which might be helpful as well.
+
+
+---
+#### 03.05.2023
+
+Today I have started working on the router and it going much smoother then I expected. Now I regret big time, that I did not implemented router at first, when I started working on this Application.
+
+Anyway... I have rework whole application. Once I digged into this, i found out, how many mistakes I have made design vise. Maybe the main reason is, that I did not really implemented any good design decisions. Each component is pretty big and they are communication together in very clunky way.
+
+I have to rethink the whole routing of the application...
+
+So far I have implemented:
+- `<Root />` Route with navigation bar and subreddit list. However none of the are currently working 
+- once '/r/:subreddit' is entered into the url path, new subreddit is rendred. This is great, I have to figure out, how to implement this with buttons and other functionality
