@@ -164,3 +164,18 @@ I have to rethink the whole routing of the application...
 So far I have implemented:
 - `<Root />` Route with navigation bar and subreddit list. However none of the are currently working 
 - once '/r/:subreddit' is entered into the url path, new subreddit is rendred. This is great, I have to figure out, how to implement this with buttons and other functionality
+
+--- 
+
+#### 20.05.2023
+
+Today is new day. I have not worked on the app for past 2 weeks. For the past two weeks I have been refreshing my __`@redux/toolkit`__ knowledge. Since I really want to implement redux store in the `<App />`.
+
+But in the meanwhile, there was a __Remix__ conf in which I have seen a really nice layout for web app. And I have tougth to myself, what I have built is actually Web page and not web app.
+
+For that reason, I have decided to __Nuke__ the entire app. And I will implement a completly new layout and design.
+
+
+> __New design__ 
+Here is as preview of how the new disign might end up looking
+![new layout for App](./public/newLayout.jpg)
