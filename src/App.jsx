@@ -1,46 +1,11 @@
-import Navbar from './components/NavBar'
-import Data from './Data'
-import SubredditList from './components/SubredditList'
-import Search from './components/Search'
-import { useState } from 'react'
-import Footer from './components/Footer'
-import Cookies from './components/Cookies'
-import Root from './pages/Root'
 import { Route, createRoutesFromElements, createBrowserRouter, RouterProvider } from "react-router-dom"
-import Subreddit from './pages/Subreddit'
 
-function App() {
 
-  // global states. Not the best solution, but better then before
-  const [subreddit, setSubreddit] = useState('popular')
-  const [search, setSearch] = useState('')
-  const [listing, setListing] = useState('hot')
-
-  const appRouter = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element={<Root />}>
-      <Route index element={<Data search={search} listing={listing} subreddit={subreddit} />} />
-      <Route path='r/:subreddit' element={<Subreddit />} />
-    </Route>
-  ))
-
-  return (
-    // <div className="App">
-    //   <Navbar subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch} listing={listing} setListing={setListing} search={search} />
-    //   <div className='columns mx-1 py-1 is-desktop'>
-    //     <div className='column is-8 is-offset-1 my-1 px-1'>
-    //       {search.length !== 0 ?
-    //         <Search search={search} /> :
-    //       }
-    //     </div>
-    //     <div className="column is-one-quarter">
-    //       <SubredditList subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch} />
-    //       <Cookies />
-    //     </div>
-    //   </div>
-    //   <Footer />
-    // </div>
-    <RouterProvider router={appRouter} />
-  )
+export default function App() {
+    return (
+            <div className="columns m-2 is-mobile">
+                <div className="column is-3 has-background-info"><h1>Hello</h1></div>
+                <div className="column is-9 has-backgound-link-light"><h2>World</h2></div>
+            </div>
+    )
 }
-
-export default App
