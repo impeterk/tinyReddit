@@ -1,6 +1,10 @@
 .min-h-full {
     min-height: 100svh;
 }
+.is-sticky {
+  position: sticky !important;
+  top: 0;
+}
 
 @media (max-width: 768px) {
   #only-desktop {

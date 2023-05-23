@@ -1,7 +1,7 @@
 export default function Panel() {
   return (
-    <div className="container ">
-     <article className="panel has-background-info is-flex is-flex-direction-column min-h-full is-fullheight is-info">
+    <div className="container">
+     <article className="panel is-sticky has-background-info is-flex is-flex-direction-column min-h-full is-fullheight is-info">
   <p className="panel-heading">
     Info
   </p>
@@ -14,18 +14,18 @@ export default function Panel() {
       </span>
     </p>
   </div>
-  <aside class="menu">
-  <ul class="menu-list has-text-light">
+  <aside className="menu">
+  <ul className="menu-list has-text-light">
     <li><a>Dashboard</a></li>
     <li><a>Customers</a></li>
   </ul>
-  <p class="menu-label">
+  <p className="menu-label">
     Administration
   </p>
-  <ul class="menu-list">
+  <ul className="menu-list">
     <li><a>Team Settings</a></li>
     <li>
-      <a class="is-active">Manage Your Team</a>
+      <a className="is-active">Manage Your Team</a>
       <ul>
         <li><a>Members</a></li>
         <li><a>Plugins</a></li>
@@ -36,10 +36,10 @@ export default function Panel() {
     <li><a>Cloud Storage Environment Settings</a></li>
     <li><a>Authentication</a></li>
   </ul>
-  <p class="menu-label">
+  <p className="menu-label">
     Transactions
   </p>
-  <ul class="menu-list">
+  <ul className="menu-list">
     <li><a>Payments</a></li>
     <li><a>Transfers</a></li>
     <li><a>Balance</a></li>

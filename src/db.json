@@ -1,0 +1,40 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        },
+        {
+            "id": 2,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        },
+        {
+            "id": 3,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        },
+        {
+            "id": 4,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        },
+        {
+            "id": 5,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        },
+        {
+            "id": 6,
+            "title": "Title",
+            "author": "author",
+            "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
+        }
+    ]
+}
