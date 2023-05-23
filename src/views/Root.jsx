@@ -1,5 +1,6 @@
 import Panel from "../components/layout/Panel";
 import NavBar from "../components/layout/NavBar";
+import Menu from "../components/layout/Menu";
 
 export default function Root() {
     return (
