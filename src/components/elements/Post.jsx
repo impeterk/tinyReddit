@@ -3,7 +3,7 @@ export default function Post(props) {
     const { title, author, content, id } = props.post
 
     return (
-        <div className="container mx-auto mb-6">
+        <article className="section py-5 px-2">
             <div className="card">
                 <div className="card-content">
                     <div className="media">
@@ -19,6 +19,6 @@ export default function Post(props) {
                     <Link to={`/${id}`} className="button is-success ">continue</Link>
                 </div>
             </div>
-        </div>
+        </article>
     )
 }
