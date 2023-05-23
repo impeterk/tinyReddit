@@ -1,3 +1,20 @@
 .min-h-full {
     min-height: 100svh;
 }
+
+@media (max-width: 768px) {
+  #only-desktop {
+    display: none
+  }
+  #only-mobile {
+    display: flex
+  }
+  }
+@media (min-width: 769px) {
+  #only-desktop {
+    display: flex
+  }
+  #only-mobile {
+    display: none
+  }
+  }
