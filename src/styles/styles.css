@@ -5,7 +5,11 @@
   position: sticky !important;
   top: 0;
 }
-
+#mobileNavBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
 @media (max-width: 768px) {
   #only-desktop {
     display: none

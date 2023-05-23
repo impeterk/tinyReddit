@@ -1,4 +1,11 @@
+import {useState} from "react"
+
 export default function NavBar() {
+const [showMobileNav, setShowMobileNav] = useState(false)
+    function handleClick() {
+        setShowMobileNav(prev => !prev)
+    }
+
     return (
         <div className="container m-0">
             <nav className="navbar is-info" role="navigation" aria-label="main navigation">
@@ -7,14 +14,14 @@ export default function NavBar() {
                         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
                     </a>
 
-                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <a role="button" onClick={handleClick} className={`navbar-burger ${showMobileNav ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                <div id="navbarBasicExample" className="navbar-menu">
+                <div id="mobileNavBar" className={`navbar-menu ${showMobileNav ? 'is-active' : ''}`}>
                     <div className="navbar-start">
                         <a className="navbar-item">
                             Home
