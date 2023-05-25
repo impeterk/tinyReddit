@@ -21,7 +21,7 @@ const [showMobileNav, setShowMobileNav] = useState(false)
                     </a>
                 </div>
 
-                <div id="mobileNavMenu" className={`navbar-menu ${showMobileNav ? 'is-active' : ''}`}>
+                <div id="mobileNavMenu" className={`navbar-menu m-0 p-0 ${showMobileNav ? 'is-active is-flex hero is-fullheight-with-navbar has-background-info' : ''}`}>
                     <div className="navbar-start">
                         <a className="navbar-item">
                             Home
@@ -32,7 +32,7 @@ const [showMobileNav, setShowMobileNav] = useState(false)
                         </a>
                     </div>
 
-                    <div className="navbar-end">
+                    <div className="navbar-end mt-auto">
                         <div className="navbar-item">
                             <div className="buttons">
                                 <a className="button is-primary">
