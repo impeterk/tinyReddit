@@ -2,7 +2,7 @@
 import db from '../db.json'
 import Post from '../components/elements/Post.jsx'
 
-export default function PostsArray() {
+export default function Subreddit() {
 
     const postsArray = db.posts
 

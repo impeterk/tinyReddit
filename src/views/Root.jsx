@@ -1,8 +1,15 @@
 import Panel from "../components/layout/Panel";
 import NavBar from "../components/layout/NavBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
 
 export default function Root() {
+    const location = useLocation()
+    if (location.pathname == '/') {
+        return (
+        <Navigate to="/r/fesak" />
+        )
+    }
+
     return (
         <div className="container is-widescreen">
             <div className="columns m-0 p-0">
