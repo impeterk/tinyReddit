@@ -5,12 +5,16 @@
   position: sticky !important;
   top: 0;
 }
-
-.navbar {
+#only-mobile {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+/* .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-}
+} */
 #mobileNavMenu {
   position: absolute;
   left: 0;

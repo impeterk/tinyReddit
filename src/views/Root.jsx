@@ -7,7 +7,7 @@ export default function Root() {
         <div className="container is-widescreen">
             <div className="columns m-0 p-0">
                 <div id="only-desktop" className="column m-0 p-0"><Panel /></div>
-                <div id="only-mobile" className="column p-0 mb-6"><NavBar /></div>
+                <div id="only-mobile" className="column p-0 m-0"><NavBar /></div>
                 <div className="column is-9 px-2"><Outlet /></div>
             </div>
         </div>
