@@ -21,7 +21,7 @@ const [showMobileNav, setShowMobileNav] = useState(false)
                     </a>
                 </div>
 
-                <div id="mobileNavBar" className={`navbar-menu ${showMobileNav ? 'is-active' : ''}`}>
+                <div id="mobileNavMenu" className={`navbar-menu ${showMobileNav ? 'is-active' : ''}`}>
                     <div className="navbar-start">
                         <a className="navbar-item">
                             Home
