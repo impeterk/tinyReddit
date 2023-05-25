@@ -6,7 +6,6 @@ export default function Subreddit() {
 
     const postsArray = db.posts
 
-    console.log(postsArray)
     return (
         <>
        <ul>

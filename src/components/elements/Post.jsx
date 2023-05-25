@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 export default function Post(props) {
     const { title, author, content, id } = props.post
-
+    const {subreddit} = useParams()
     return (
         <article className="section py-5 px-2">
             <div className="card">
@@ -16,7 +16,7 @@ export default function Post(props) {
                     <div className="content">{content}</div>
                 </div>
                 <div className="card-content field is-grouped is-grouped-right">
-                    <Link to={`/${id}`} className="button is-success ">continue</Link>
+                    <Link to={`/r/${subreddit}/${id}`} className="button is-success ">continue</Link>
                 </div>
             </div>
         </article>

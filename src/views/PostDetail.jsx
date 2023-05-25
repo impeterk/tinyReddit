@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom"
 
 export default function PostDetail() {
-    const { id } = useParams()
+    const {subreddit, id } = useParams()
     const navigate = useNavigate()
 
     function goBack() {
@@ -10,6 +10,7 @@ export default function PostDetail() {
     return (
         <div className="container">
             <p>{id}</p>
+            <p>{subreddit}</p>
             <button className="button is-link" onClick={goBack}>go Back</button>
         </div>
     )

@@ -5,8 +5,8 @@ import PostDetail from "./views/PostDetail"
 
 const appRouter = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
-        <Route path="/r/:subreddit" element={<Subreddit />} />
-        <Route path=":id" element={<PostDetail />} />
+        <Route path="/r/:subreddit" element={<Subreddit />}/>
+        <Route path="/r/:subreddit/:id" element={<PostDetail />} />
     </Route>
 ))
 
