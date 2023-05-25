@@ -1,7 +1,7 @@
-import {useState} from "react"
+import { useState } from "react"
 
 export default function NavBar() {
-const [showMobileNav, setShowMobileNav] = useState(false)
+    const [showMobileNav, setShowMobileNav] = useState(false)
     function handleClick() {
         setShowMobileNav(prev => !prev)
     }
@@ -21,7 +21,7 @@ const [showMobileNav, setShowMobileNav] = useState(false)
                     </a>
                 </div>
 
-                <div id="mobileNavMenu" className={`navbar-menu m-0 p-0 ${showMobileNav ? 'is-active is-flex hero is-fullheight-with-navbar has-background-info' : ''}`}>
+                <div id="mobileNavMenu" className={`navbar-menu m-0 p-0 animate__animated ${showMobileNav ? 'is-active is-flex hero is-fullheight-with-navbar has-background-info animate__slideInLeft' : ''}`}>
                     <div className="navbar-start">
                         <a className="navbar-item">
                             Home

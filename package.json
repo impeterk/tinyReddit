@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.8.5",
+    "animate.css": "^4.1.1",
     "bulma": "0.9.4",
     "cors": "^2.8.5",
     "react": "^18.2.0",
