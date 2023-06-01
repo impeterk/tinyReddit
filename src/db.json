@@ -36,5 +36,8 @@
             "author": "author",
             "content": "lorem ip[siasodfnsavaksdj klasjfklj vasidjfklasjdf"
         }
+    ],
+    "subredditList": [
+        "item1", "item2", "item3"
     ]
 }

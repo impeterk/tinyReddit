@@ -1,5 +1,5 @@
-import Panel from "../components/layout/Panel";
-import NavBar from "../components/layout/NavBar";
+import Panel from "@/components/layout/Panel";
+import NavBar from "@/components/layout/NavBar";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 
 export default function Root() {

@@ -1,4 +1,6 @@
 import { useState } from "react"
+import SubredditList from "../navigation/SubredditList"
+import Footer from "../navigation/Footer"
 
 export default function NavBar() {
     const [showMobileNav, setShowMobileNav] = useState(false)
@@ -23,26 +25,11 @@ export default function NavBar() {
 
                 <div id="mobileNavMenu" className={`navbar-menu m-0 p-0 animate__animated ${showMobileNav ? 'is-active is-flex hero is-fullheight-with-navbar has-background-info animate__slideInLeft' : ''}`}>
                     <div className="navbar-start">
-                        <a className="navbar-item">
-                            Home
-                        </a>
-
-                        <a className="navbar-item">
-                            Documentation
-                        </a>
+                        <SubredditList />
                     </div>
 
                     <div className="navbar-end mt-auto">
-                        <div className="navbar-item">
-                            <div className="buttons">
-                                <a className="button is-primary">
-                                    <strong>Sign up</strong>
-                                </a>
-                                <a className="button is-light">
-                                    Log in
-                                </a>
-                            </div>
-                        </div>
+                        <Footer />
                     </div>
                 </div>
             </nav>

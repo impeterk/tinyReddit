@@ -1,6 +1,17 @@
+import { useState } from "react"
+import Footer from "../navigation/Footer"
+import SubredditList from "../navigation/SubredditList"
 export default function Panel() {
+
+  const [search, setSearch] = useState()
+
+  const handleInput = (event) => {
+
+    setSearch(prev => prev = event.target.value)
+  }
+
   return (
-    <div className="container">
+    <div className="container is-family-monospace">
      <article className="panel is-sticky has-background-info is-flex is-flex-direction-column min-h-full is-fullheight is-info">
   <p className="panel-heading">
     Info
@@ -8,43 +19,17 @@ export default function Panel() {
   
   <div className="panel-block">
     <p className="control has-icons-left">
-      <input className="input is-info" type="text" placeholder="Search" />
+      <input className="input is-info" type="text" placeholder="Search" onChange={handleInput}/>
       <span className="icon is-left">
         <i className="fas fa-search" aria-hidden="true"></i>
       </span>
     </p>
+    
   </div>
-  <aside className="menu">
-  <ul className="menu-list has-text-light">
-    <li><a>Dashboard</a></li>
-    <li><a>Customers</a></li>
-  </ul>
-  <p className="menu-label">
-    Administration
-  </p>
-  <ul className="menu-list">
-    <li><a>Team Settings</a></li>
-    <li>
-      <a className="is-active">Manage Your Team</a>
-      <ul>
-        <li><a>Members</a></li>
-        <li><a>Plugins</a></li>
-        <li><a>Add a member</a></li>
-      </ul>
-    </li>
-    <li><a>Invitations</a></li>
-    <li><a>Cloud Storage Environment Settings</a></li>
-    <li><a>Authentication</a></li>
-  </ul>
-  <p className="menu-label">
-    Transactions
-  </p>
-  <ul className="menu-list">
-    <li><a>Payments</a></li>
-    <li><a>Transfers</a></li>
-    <li><a>Balance</a></li>
-  </ul>
-</aside>
+  <SubredditList />
+  <div className="mt-auto">
+<Footer />
+  </div>
   </article> 
     </div>
   )

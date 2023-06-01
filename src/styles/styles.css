@@ -1,14 +1,29 @@
 .min-h-full {
-    min-height: 100svh;
+  min-height: 100svh;
 }
+
 .is-sticky {
   position: sticky !important;
   top: 0;
 }
+
+#only-desktop {
+  display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
 #only-mobile {
+  display: none;
   position: sticky;
   top: 0;
   z-index: 30;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 }
 
 #mobileNavMenu {
@@ -16,19 +31,12 @@
   left: 0;
   width: 100%;
 }
-@media (max-width: 768px) {
-  #only-desktop {
-    display: none
-  }
-  #only-mobile {
-    display: flex
-  }
-  }
-@media (min-width: 769px) {
-  #only-desktop {
-    display: flex
-  }
-  #only-mobile {
-    display: none
-  }
-  }
+
+a.has-text-light:hover {
+  color: hsl(0, 0%, 21%) !important;
+}
+
+#githublink:hover {
+  color: hsl(217, 71%, 53%) !important;
+  background-color:hsl(0, 0%, 96%) !important;
+}
