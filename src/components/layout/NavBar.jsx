@@ -1,6 +1,6 @@
 import { useState } from "react"
-import SubredditList from "../navigation/SubredditList"
-import Footer from "../navigation/Footer"
+import SubredditList from "@/components/navigation/subredditList/SubredditList"
+import Footer from "@/components/navigation/Footer"
 
 export default function NavBar() {
     const [showMobileNav, setShowMobileNav] = useState(false)

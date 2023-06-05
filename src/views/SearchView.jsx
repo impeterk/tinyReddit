@@ -1,15 +1,17 @@
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import db from '@/db.json'
-
+import { addSubreddit } from '@/components/navigation/subredditList/subredditListSlice'
+import { useDispatch } from 'react-redux'
 export default function SearchView() {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
     const searchQuery = searchParams.get('q')
-    const subredditList = db.subredditList
+    const dispatch = useDispatch()
 
     const onLinkClick = () => {
-        if (!subredditList.includes(searchQuery) && searchQuery) {
-            subredditList.unshift(searchQuery)
+        if (searchQuery) {
+        dispatch(
+            addSubreddit(searchQuery)
+        )
         }
         navigate({
             pathname: `/r/${searchQuery}`
