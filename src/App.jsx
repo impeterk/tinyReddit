@@ -3,11 +3,13 @@ import Root from "@/views/Root"
 import PostsView from "@/views/PostsView"
 import PostDetailView from "@/views/PostDetailView"
 import AboutView from '@/views/AboutView'
+import SearchView from "./views/SearchView"
 
 const appRouter = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />}>
         <Route path="/r/:subreddit" element={<PostsView />}/>
         <Route path="/r/:subreddit/:id" element={<PostDetailView />} />
+        <Route path="search" element={<SearchView />} />
         <Route path="/about" element={<AboutView />} />
     </Route>
 ))
