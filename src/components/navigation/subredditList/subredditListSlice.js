@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let initialState = ['reactjs', 'cars', 'nextjs', 'unixporn', 'ubuntu']
+const initialState = ['reactjs', 'cars', 'nextjs', 'unixporn', 'ubuntu']
 
 const subredditListSlice = createSlice({
     name: 'subredditList',
@@ -12,8 +12,9 @@ const subredditListSlice = createSlice({
             }
         },
         removeSubreddit: (state, action) => {
-            const subredditToDelete = state.findIndex(action.payload)
-            state.splice(subredditToDelete, 1)
+            console.log(state)
+            return state.filter(item => item !== action.payload)
+            
         }
     }
 

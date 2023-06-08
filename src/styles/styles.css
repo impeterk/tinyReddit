@@ -1,3 +1,7 @@
+:root {
+  --white-ter: hsl(0, 0%, 96%)
+}
+
 .min-h-full {
   min-height: 100svh;
 }
@@ -38,5 +42,12 @@ a.has-text-light:hover {
 
 #githublink:hover {
   color: hsl(217, 71%, 53%) !important;
-  background-color:hsl(0, 0%, 96%) !important;
+  background-color: var(--white-ter) !important;
+}
+
+.is-rounded {
+  border-radius: 5px;
+}
+.is-bordered {
+  border: 1px solid var(--white-ter)
 }
