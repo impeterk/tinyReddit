@@ -1,6 +1,7 @@
 :root {
   --white-ter: hsl(0, 0%, 96%);
-  --grey-lighter: hsl(0, 0%, 86%)
+  --grey-lighter: hsl(0, 0%, 86%);
+  --danger: hsl(348, 100%, 61%);
 }
 
 .min-h-full {
@@ -72,5 +73,9 @@ a.has-text-light:hover {
 .is-rounded.is-icon {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-left: 0;
 }
-
+/* 
+.is-bordered.is-icon:hover {
+  border-color: var(--danger)
+} */
