@@ -25,7 +25,7 @@ export default function DeleteIcon(props) {
     }
 
     return (
-        <div onClick={handleIconClick} className={`h-100 p-2 is-bordered is-icon is-rounded mr-auto ${hovered ? 'has-background-danger has-text-light' : 'has-background-grey-lighter has-text-info'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div onClick={handleIconClick} className={`h-100 p-2 is-bordered is-icon is-rounded mr-auto is-clickable ${hovered ? 'has-background-danger has-text-light' : 'has-background-grey-lighter has-text-info'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <FontAwesomeIcon icon={faXmark} beat={hovered} />
         </div>
     )

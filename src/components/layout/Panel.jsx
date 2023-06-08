@@ -7,7 +7,7 @@ export default function Panel() {
     <div className="container is-family-monospace">
      <article className="panel is-sticky has-background-info is-flex is-flex-direction-column min-h-full is-fullheight is-info">
   <p className="panel-heading">
-    Info
+ {`<React 2 Reddit />`} 
   </p>
   
   <div className="panel-block">
