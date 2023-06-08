@@ -1,5 +1,5 @@
 import Panel from "@/components/layout/Panel";
-import NavBar from "@/components/layout/NavBar";
+import NavBar from "@/components/layout/navBar/NavBar";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 import Search from "../components/Search/Search";
 export default function Root() {
@@ -12,11 +12,12 @@ export default function Root() {
     return (
         <div className="container is-widescreen">
             <div className="columns m-0 p-0">
-                <div id="only-desktop" className="column m-0 p-0"><Panel /></div>
-                <div id="only-mobile" className="column p-0 m-0"><NavBar /></div>
+                <div className="column m-0 p-0 only-desktop"><Panel /></div>
+                <div className="column p-0 m-0 only-mobile"><NavBar /></div>
                 <div className="column is-9 px-2">
-                    <Search />
-                    <Outlet /></div>
+                    <Search className="only-desktop" />
+                    <Outlet />
+                    </div>
             </div>
         </div>
     )

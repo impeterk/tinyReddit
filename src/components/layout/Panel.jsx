@@ -1,14 +1,7 @@
-import { useState } from "react"
 import Footer from "@/components/navigation/Footer"
 import SubredditList from "@/components/navigation/subredditList/SubredditList"
 export default function Panel() {
 
-  const [search, setSearch] = useState()
-
-  const handleInput = (event) => {
-
-    setSearch(prev => prev = event.target.value)
-  }
 
   return (
     <div className="container is-family-monospace">
@@ -19,7 +12,7 @@ export default function Panel() {
   
   <div className="panel-block">
     <p className="control has-icons-left">
-      <input className="input is-info" type="text" placeholder="Search" onChange={handleInput}/>
+      <input className="input is-info" type="text" placeholder="Search" />
       <span className="icon is-left">
         <i className="fas fa-search" aria-hidden="true"></i>
       </span>

@@ -10,9 +10,10 @@ export default function SubredditList(props) {
     return (
         <div className="mt-6 is-flex is-flex-direction-column is-size-3 has-text-centered">
             {subredditList.map(item => (
-                <SubredditLink key={item} item={item}>
+                <div key={item} className="is-flex is-align-items-center">
+                <SubredditLink key={item} item={item} />
                     <DeleteIcon item={item} />
-                </SubredditLink>
+                </div>
             ))}
         </div>
     )

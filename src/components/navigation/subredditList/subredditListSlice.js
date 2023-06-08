@@ -12,7 +12,6 @@ const subredditListSlice = createSlice({
             }
         },
         removeSubreddit: (state, action) => {
-            console.log(state)
             return state.filter(item => item !== action.payload)
             
         }

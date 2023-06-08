@@ -1,9 +1,17 @@
 :root {
-  --white-ter: hsl(0, 0%, 96%)
+  --white-ter: hsl(0, 0%, 96%);
+  --grey-lighter: hsl(0, 0%, 86%)
 }
 
 .min-h-full {
   min-height: 100svh;
+}
+
+.h-100 {
+height: 100%;  
+}
+.w-icon {
+  width: 1.25rem;
 }
 
 .is-sticky {
@@ -11,15 +19,15 @@
   top: 0;
 }
 
-#only-desktop {
-  display: flex;
+.only-desktop {
+  display: flex !important;
 
   @media (max-width: 768px) {
-    display: none;
+    display: none !important;
   }
 }
 
-#only-mobile {
+.only-mobile {
   display: none;
   position: sticky;
   top: 0;
@@ -49,5 +57,20 @@ a.has-text-light:hover {
   border-radius: 5px;
 }
 .is-bordered {
-  border: 1px solid var(--white-ter)
+  border: 1px solid var(--white-ter);
 }
+.is-bordered.is-icon {
+  border: 1px solid var(--grey-lighter)
+}
+
+.is-rounded.navbar-item {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  width: 80%;
+}
+.is-rounded.is-icon {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+

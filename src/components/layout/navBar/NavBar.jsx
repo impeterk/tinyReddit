@@ -1,11 +1,15 @@
-import { useState } from "react"
 import SubredditList from "@/components/navigation/subredditList/SubredditList"
 import Footer from "@/components/navigation/Footer"
+import { selectNavBarMenu,toggleMenu } from "./navBarSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 export default function NavBar() {
-    const [showMobileNav, setShowMobileNav] = useState(false)
+    const dispatch = useDispatch()
+    const showMobileNav = useSelector(selectNavBarMenu) 
     function handleClick() {
-        setShowMobileNav(prev => !prev)
+    dispatch(
+        toggleMenu()
+    )
     }
 
     return (

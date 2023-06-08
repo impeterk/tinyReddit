@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch } from "react-redux"
 import { removeSubreddit } from './subredditListSlice'
 import { useState } from "react"
@@ -25,8 +25,8 @@ export default function DeleteIcon(props) {
     }
 
     return (
-        <div onClick={handleIconClick} className={`ml-auto ${hovered ? 'has-text-danger' : ''}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <FontAwesomeIcon icon={faCircleXmark} size='sm' beat={hovered} />
+        <div onClick={handleIconClick} className={`h-100 p-2 is-bordered is-icon is-rounded mr-auto ${hovered ? 'has-background-danger has-text-light' : 'has-background-grey-lighter has-text-info'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <FontAwesomeIcon icon={faXmark} beat={hovered} />
         </div>
     )
 }
