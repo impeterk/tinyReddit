@@ -1,24 +1,25 @@
 import SubredditList from "@/components/navigation/subredditList/SubredditList"
 import Footer from "@/components/navigation/Footer"
-import { selectNavBarMenu,toggleMenu } from "./navBarSlice"
+import { selectNavBarMenu, toggleMenu } from "./navBarSlice"
 import { useDispatch, useSelector } from "react-redux"
+import Search from "../../elements/Search/Search"
 
 export default function NavBar() {
     const dispatch = useDispatch()
-    const showMobileNav = useSelector(selectNavBarMenu) 
+    const showMobileNav = useSelector(selectNavBarMenu)
     function handleClick() {
-    dispatch(
-        toggleMenu()
-    )
+        dispatch(
+            toggleMenu()
+        )
     }
 
     return (
-        <div className="container m-0">
+        <div className="container m-0 is-family-monospace">
             <nav className="navbar is-info" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href="https://bulma.io">
-                        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
-                    </a>
+                    <p className="navbar-item is-size-4" >
+                        {`<React 2 Reddit />`}
+                    </p>
 
                     <a role="button" onClick={handleClick} className={`navbar-burger ${showMobileNav ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
@@ -29,6 +30,9 @@ export default function NavBar() {
 
                 <div id="mobileNavMenu" className={`navbar-menu m-0 p-0 animate__animated ${showMobileNav ? 'is-active is-flex hero is-fullheight-with-navbar has-background-info animate__slideInLeft' : ''}`}>
                     <div className="navbar-start">
+                        <div className="m-4">
+                            <Search buttonColor='info is-light'/>
+                        </div>
                         <SubredditList />
                     </div>
 

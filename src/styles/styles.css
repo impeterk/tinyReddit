@@ -18,6 +18,10 @@ height: 100%;
 .is-sticky {
   position: sticky !important;
   top: 0;
+  z-index: 30;
+}
+.search {
+  width: 100%
 }
 
 .only-desktop {
