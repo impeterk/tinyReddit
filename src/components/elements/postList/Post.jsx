@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 export default function Post(props) {
-    const { title, author, content, id } = props.post
+    const { title, author, content, id } = props.post.data
     const {subreddit} = useParams()
     return (
         <article className="section py-5 px-2">

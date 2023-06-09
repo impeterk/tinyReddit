@@ -2,6 +2,7 @@
   --white-ter: hsl(0, 0%, 96%);
   --grey-lighter: hsl(0, 0%, 86%);
   --danger: hsl(348, 100%, 61%);
+  --info-light: hsl(206, 70%, 96%);
 }
 
 .min-h-full {
@@ -83,3 +84,9 @@ a.has-text-light:hover {
 .is-bordered.is-icon:hover {
   border-color: var(--danger)
 } */
+
+.pageloader.is-light {
+  position: relative !important;
+  min-height: 100svh;
+  background-color: var(--info-light) ;
+}

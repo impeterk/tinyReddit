@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const initialList = ['reactjs', 'cars', 'nextjs', 'unixporn', 'ubuntu']
+const initialList = ['reactjs', 'Fun', 'nextjs', 'unixporn', 'ubuntu']
 
 export const loadSubreddit = createAsyncThunk(
     "subredditList/loadSubreddit",
@@ -39,7 +39,7 @@ const subredditListSlice = createSlice({
             state.failedToLoad = false
         },
         [loadSubreddit.fulfilled]: (state, action) => {
-            console.log(action.payload)
+            state.postsInSubreddit = action.payload.data.children
             state.isLoading = false
             state.failedToLoad = false
         },
