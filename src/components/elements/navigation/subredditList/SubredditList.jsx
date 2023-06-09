@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { selectSubredditList, } from "./subredditListSlice"
+import { selectSubredditList, } from "./subredditSlice"
 import DeleteIcon from "./DeleteIcon"
 import SubredditLink from './SubredditLink'
 

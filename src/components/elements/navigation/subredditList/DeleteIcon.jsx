@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch } from "react-redux"
-import { removeSubreddit } from './subredditListSlice'
+import { removeSubreddit } from './subredditSlice'
 import { useState } from "react"
 export default function DeleteIcon(props) {
     const [hovered, setHovered] = useState(false)

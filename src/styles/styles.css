@@ -90,3 +90,6 @@ a.has-text-light:hover {
   min-height: 100svh;
   background-color: var(--info-light) ;
 }
+.pageloader.display-none {
+  display: none !important;
+}
