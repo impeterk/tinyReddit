@@ -1,5 +1,5 @@
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { addSubreddit } from '@/components/navigation/subredditList/subredditListSlice'
+import { addSubreddit } from '@/components/elements/navigation/subredditList/subredditListSlice'
 import { useDispatch } from 'react-redux'
 export default function SearchView() {
     const navigate = useNavigate()

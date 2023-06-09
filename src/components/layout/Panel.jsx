@@ -1,5 +1,5 @@
-import Footer from "@/components/navigation/Footer"
-import SubredditList from "@/components/navigation/subredditList/SubredditList"
+import Footer from "@/components/elements/navigation/Footer"
+import SubredditList from "@/components/elements/navigation/subredditList/SubredditList"
 export default function Panel() {
 
 

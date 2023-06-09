@@ -1,5 +1,5 @@
-import SubredditList from "@/components/navigation/subredditList/SubredditList"
-import Footer from "@/components/navigation/Footer"
+import SubredditList from "@/components/elements/navigation/subredditList/SubredditList"
+import Footer from "@/components/elements/navigation/Footer"
 import { selectNavBarMenu, toggleMenu } from "./navBarSlice"
 import { useDispatch, useSelector } from "react-redux"
 import Search from "../../elements/Search/Search"
