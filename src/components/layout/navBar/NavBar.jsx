@@ -18,7 +18,7 @@ export default function NavBar() {
             <nav className="navbar is-info" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <p className="navbar-item is-size-4" >
-                        {`<React 2 Reddit />`}
+                        {`<React2Reddit />`}
                     </p>
 
                     <a role="button" onClick={handleClick} className={`navbar-burger ${showMobileNav ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

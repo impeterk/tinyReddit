@@ -8,6 +8,7 @@ export default function PostsView() {
     const { subreddit } = useParams()
     const dispatch = useDispatch()
     const postsArray = useSelector(selectPostsInSubreddit)
+    const subredditTitle = subreddit.charAt(0).toUpperCase() + subreddit.slice(1)
     useEffect(() => {
         dispatch(loadSubreddit(subreddit))
     }, [subreddit])
@@ -15,9 +16,19 @@ export default function PostsView() {
     console.log(postsArray)
     return (
         <>
+            <section className="hero mt-4 is-rounded is-info">
+                <div className="hero-body has-text-centered">
+                    <p className="title is-size-1">
+                        <span className="title">/r/</span>
+                        {subredditTitle}
+                    </p>
+                </div>
+            </section>
             <ul>
                 {postsArray.map(post => (
-                    <li key={post.data.id}><Post post={post} /></li>
+                    <li key={post.data.id}>
+                        <Post post={post} />
+                    </li>
                 ))}
             </ul>
         </>

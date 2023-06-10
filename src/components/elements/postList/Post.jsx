@@ -3,7 +3,7 @@ export default function Post(props) {
     const { title, author, content, id } = props.post.data
     const {subreddit} = useParams()
     return (
-        <article className="section py-5 px-2">
+        <article className="section py-5 px-0">
             <div className="card">
                 <div className="card-content">
                     <div className="media">
@@ -16,6 +16,7 @@ export default function Post(props) {
                     <div className="content">{content}</div>
                 </div>
                 <div className="card-content field is-grouped is-grouped-right">
+                    {props.children}
                     <Link to={`/r/${subreddit}/${id}`} className="button is-success ">continue</Link>
                 </div>
             </div>

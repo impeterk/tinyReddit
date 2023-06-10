@@ -8,7 +8,7 @@ export default function Panel() {
       <article className="panel is-sticky has-background-info is-flex is-flex-direction-column min-h-full is-fullheight is-info">
         <div className="panel-block">
           <p className="panel-heading is-size-4-desktop">
-            {`<React 2 Reddit />`}
+            {`<React2Reddit />`}
           </p>
         </div>
         <SubredditList />
