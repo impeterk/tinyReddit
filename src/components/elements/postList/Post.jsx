@@ -4,7 +4,7 @@ import { faFileLines } from "@fortawesome/free-solid-svg-icons"
 export default function Post(props) {
     const { title, author, selftext, id, post_hint, url } = props.post.data
     const { subreddit } = useParams()
-    console.log(props.post.data)
+
     return (
         <article className="section py-5 px-0">
             <div className="card">

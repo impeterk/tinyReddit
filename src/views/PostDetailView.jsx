@@ -24,7 +24,7 @@ export default function PostDetailView() {
 
     if (isLoading) {
         return (
-            <h1 className="title">Loading...</h1>
+            <div className={`pageloader is-active is-light`}><span className="title">Loading...</span></div>
         )
     }
 
@@ -49,16 +49,16 @@ export default function PostDetailView() {
                         <div className="content">
                             {postData.selftext}
                         </div>
-                    </div> 
+                    </div>
                 }
                 <div className="card-content">
                     <p className="subtitle is-3">Comments</p>
                     <div className="media">
-                    <ul>
-                        {comments.map(comment => (
-                            <li key={comment.data.id}><Comment commentData={comment.data} /></li>
-                        ))}
-                    </ul>
+                        <ul>
+                            {comments.map(comment => (
+                                <li key={comment.data.id}><Comment commentData={comment.data} /></li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
