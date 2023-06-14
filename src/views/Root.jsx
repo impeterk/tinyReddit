@@ -9,7 +9,7 @@ export default function Root() {
     const location = useLocation()
     if (location.pathname == '/') {
         return (
-        <Navigate to="/r/reactjs" />
+            <Navigate to="/r/reactjs" />
         )
     }
     return (
@@ -18,11 +18,14 @@ export default function Root() {
                 <div className="column m-0 p-0 mr-2 only-desktop"><Panel /></div>
                 <div className="column p-0 m-0 only-mobile"><NavBar /></div>
                 <div className="column is-9">
-            <div className={`pageloader ${loadingSubreddit ? 'is-active' : 'display-none' } is-light`}><span className="title">Loading...</span></div>
-                    <div className="only-desktop is-sticky px-0 ">
-                    <Search /></div>
-                    <Outlet />
+                        <div className="only-desktop is-sticky px-0 is-flex">
+                            <Search />
+                        </div>
+                    <div className={`pageloader ${loadingSubreddit ? 'is-active' : 'display-none'} is-light`}><span className="title">Loading...</span></div>
+                    <div className={`${loadingSubreddit ? 'display-none' : ''}`}>
+                        <Outlet />
                     </div>
+                </div>
             </div>
         </div>
     )

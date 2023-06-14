@@ -1,5 +1,6 @@
 import Footer from "@/components/elements/navigation/Footer"
 import SubredditList from "@/components/elements/navigation/subredditList/SubredditList"
+import NavButtons from "../elements/navigation/NavButtons"
 export default function Panel() {
 
 
@@ -11,7 +12,11 @@ export default function Panel() {
             {`<React2Reddit />`}
           </p>
         </div>
-        <SubredditList />
+        {/* <div className="panel-block">
+          <NavButtons />
+        </div> */}
+
+          <SubredditList />
         <div className="mt-auto">
           <Footer />
         </div>

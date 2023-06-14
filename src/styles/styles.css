@@ -22,7 +22,7 @@ height: 100%;
   z-index: 30;
 }
 .search {
-  width: 100%
+  width: 100%;
 }
 
 .only-desktop {
@@ -48,6 +48,9 @@ height: 100%;
   position: absolute;
   left: 0;
   width: 100%;
+}
+#mobileNavMenu.is-active {
+z-index: 30;
 }
 
 a.has-text-light:hover {
@@ -84,12 +87,25 @@ a.has-text-light:hover {
 .is-bordered.is-icon:hover {
   border-color: var(--danger)
 } */
+.pageloader {
+  z-index: 20 !important;
+}
 
 .pageloader.is-light {
   position: relative !important;
-  min-height: 100svh;
+  height: 80svh;
   background-color: var(--info-light) ;
 }
 .pageloader.display-none {
   display: none !important;
+}
+.display-none {
+display: none!important;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+  overflow: hidden !important;
 }
