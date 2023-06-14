@@ -3,6 +3,7 @@ import { getSubreddit } from "../api"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadPost, selectIsLoading, selectComments, selectPostData } from "../components/elements/postList/postListSlice"
+import Comment from "@/components/elements/postList/Comment"
 
 export default function PostDetailView() {
     const { subreddit, id } = useParams()
@@ -30,14 +31,14 @@ export default function PostDetailView() {
 
     console.log({ postData, comments })
     return (
-        <div className="container mt-4 ">
+        <div className="mt-4 ">
             {/* <div className="is-flex my-4">
                 <button className="button is-link" onClick={goBack}>go Back</button>
             </div> */}
             <div className="card p-2 ">
                 <div className="card-content">
-                    <h1 className="title has-text-centered is-3">{postData.title}</h1>
-                    <p className="subtitle has-text-right">{postData.title}</p>
+                    <h1 className="title is-3">{postData.title}</h1>
+                    <p className="subtitle has-text-right">by: {postData.author}</p>
                 </div>
                 {postData.post_hint == "image" ?
                     < div className="card-image">
@@ -51,12 +52,14 @@ export default function PostDetailView() {
                     </div> 
                 }
                 <div className="card-content">
-                    <p className="subtitle">Comments</p>
+                    <p className="subtitle is-3">Comments</p>
+                    <div className="media">
                     <ul>
                         {comments.map(comment => (
-                            <li key={comment.data.id}><p className="content">{comment.data.body}</p></li>
+                            <li key={comment.data.id}><Comment commentData={comment.data} /></li>
                         ))}
                     </ul>
+                    </div>
                 </div>
             </div>
         </div >
