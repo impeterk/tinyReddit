@@ -1,17 +1,25 @@
+import { useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { addSubreddit } from '@/components/elements/navigation/subredditList/subredditSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { loadSearchResults, selectLoadingSearch, selectSearchResults } from '../components/elements/Search/searchSlice'
 export default function SearchView() {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
     const searchQuery = searchParams.get('q')
     const dispatch = useDispatch()
+    const isLoading = useSelector(selectLoadingSearch)
+    const searchResults = useSelector(selectSearchResults)
+
+    useEffect(() => {
+        dispatch(loadSearchResults(searchQuery))
+    }, [searchQuery])
 
     const onLinkClick = () => {
         if (searchQuery) {
-        dispatch(
-            addSubreddit(searchQuery)
-        )
+            dispatch(
+                addSubreddit(searchQuery)
+            )
         }
         navigate({
             pathname: `/r/${searchQuery}`
@@ -19,9 +27,19 @@ export default function SearchView() {
         setSearchParams(prev => '')
     }
 
+
     return (
-        <section className="section py-5 px-2">
-            <Link onClick={onLinkClick} className="is-info has-background-light is-size-5">{searchQuery ? `/r/${searchQuery}` : 'Home'}</Link>
-        </section>
+        <>
+            <Link onClick={onLinkClick} >
+                <div className="hero is-info">
+                    <div className="hero-body">
+                        <div className="title">
+                            {searchQuery}
+                        </div>
+                    </div>
+                </div>
+            </Link>
+            {isLoading ? (<h1 className="title">Loading...</h1>) : <h1 className='title'>Loaded</h1> }
+        </>
     )
 }

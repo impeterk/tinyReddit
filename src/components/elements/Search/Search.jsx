@@ -21,6 +21,9 @@ export default function Search(props) {
         }
         const query = createSearchParams(searchQuery)
 
+        setSearch(() => {
+            return ''
+        })
         navigate({
             pathname: '/search',
             search: `?${query}`
@@ -31,9 +34,9 @@ export default function Search(props) {
 
     return (
         <form className="control has-icons-left has-icons-right is-flex is-sticky search" onSubmit={handleSubmit}>
-            <input onChange={handleInputChange} className="input is-info" type="text" placeholder="Search" />
+            <input onChange={handleInputChange} className="input is-info has-background-info-light" value={search} type="text" placeholder="Search" />
             <span className="ml-3 icon is-left">
-                <FontAwesomeIcon className="has-text-info" icon={faSearch} />
+                <FontAwesomeIcon className="has-text-info mr-4" icon={faSearch} />
             </span>
             <button
                 className={`button is-${props.buttonColor || 'info'} has-text-weight-bold is-family-monospace`}

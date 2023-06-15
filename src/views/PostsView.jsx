@@ -15,7 +15,7 @@ export default function PostsView() {
 
     return (
         <>
-            <section className="hero mt-4 is-medium is-desktop is-rounded is-info">
+            <section className="hero is-medium is-desktop is-rounded is-info">
                 <div className="hero-body has-text-centered">
                     <p className="title is-size-1">
                         <span className="title">/r/</span>
