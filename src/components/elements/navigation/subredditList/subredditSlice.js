@@ -11,13 +11,23 @@ export const loadSubreddit = createAsyncThunk(
     }
 )
 
+export const loadMorePosts = createAsyncThunk(
+    "subreddit/loadMorePosts",
+    async ({ subreddit, limit }) => {
+        let response = await fetch(`https://www.reddit.com/r/${subreddit}.json?limit=${limit}`)
+        let responseJSON = await response.json()
+        return responseJSON
+    }
+)
+
 const subredditSlice = createSlice({
     name: 'subreddit',
     initialState: {
         subredditList: initialList,
         postsInSubreddit: [],
         isLoading: false,
-        failedToLoad: false
+        failedToLoad: false,
+        loadingMore: false
     },
     reducers: {
         addSubreddit: (state, action) => {
@@ -30,7 +40,7 @@ const subredditSlice = createSlice({
             }
         },
         removeSubreddit: (state, action) => {
-            state.subredditList =  state.subredditList.filter(item => item !== action.payload)
+            state.subredditList = state.subredditList.filter(item => item !== action.payload)
         }
     },
     extraReducers: {
@@ -46,9 +56,22 @@ const subredditSlice = createSlice({
         [loadSubreddit.rejected]: (state, action) => {
             state.isLoading = false
             state.failedToLoad = true
+        },
+        [loadMorePosts.pending]: (state, action) => {
+            state.loadingMore = true
+            state.failedToLoad = false
+        },
+        [loadMorePosts.fulfilled]: (state, action) => {
+            state.postsInSubreddit = action.payload.data.children
+            state.loadingMore = false
+            state.failedToLoad = false
+        },
+        [loadMorePosts.rejected]: (state, action) => {
+            state.loadingMore = false
+            state.failedToLoad = true
         }
-    }
 
+    }
 })
 
 export const { addSubreddit, removeSubreddit } = subredditSlice.actions
@@ -57,3 +80,4 @@ export default subredditSlice.reducer
 export const selectSubredditList = (state) => state.subreddit.subredditList
 export const selectIsLoading = (state) => state.subreddit.isLoading
 export const selectPostsInSubreddit = (state) => state.subreddit.postsInSubreddit
+export const selectLoadingMore = (state) => state.subreddit.loadingMore

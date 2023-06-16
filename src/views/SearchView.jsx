@@ -3,6 +3,9 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { addSubreddit } from '@/components/elements/navigation/subredditList/subredditSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadSearchResults, selectLoadingSearch, selectSearchResults } from '../components/elements/Search/searchSlice'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight,faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import Post from '@/components/elements/postList/Post'
 export default function SearchView() {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
@@ -31,15 +34,33 @@ export default function SearchView() {
     return (
         <>
             <Link onClick={onLinkClick} >
-                <div className="hero is-info">
+                <div className="hero is-info ">
                     <div className="hero-body">
-                        <div className="title">
-                            {searchQuery}
+                        <div className="title has-text-right ">
+                        <span className="subtitle mr-2">
+                            continue to 
+                        </span>
+                              /r/{searchQuery}
+                        <FontAwesomeIcon icon={faDoorOpen} size="lg" className='ml-5'/>
                         </div>
                     </div>
                 </div>
             </Link>
-            {isLoading ? (<h1 className="title">Loading...</h1>) : <h1 className='title'>Loaded</h1> }
+            {isLoading ? (
+                    <div className='pageloader is-active is-light'></div>
+            ) : 
+            <ul>
+                {searchResults.map(post => (
+                    <li key={post.data.id}>
+                        <Post post={post} >
+                    <Link to={`/r/${post.data.subreddit}`} className="button is-medium is-info is-outlined is-responsive">
+                        <span>to Subreddit</span>
+                        <FontAwesomeIcon icon={faArrowRight} size="xl" className="ml-2"/>
+                        </Link>
+                        </Post>
+                    </li>
+                ))}
+            </ul> }
         </>
     )
 }

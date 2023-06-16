@@ -2,8 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileLines } from "@fortawesome/free-solid-svg-icons"
 export default function Post(props) {
-    const { title, author, selftext, id, post_hint, url } = props.post.data
-    const { subreddit } = useParams()
+    const { title, author, subreddit, selftext, id, post_hint, url } = props.post.data
 
     return (
         <article className="section py-5 px-0">
@@ -28,11 +27,11 @@ export default function Post(props) {
                     </p>
 
                 </div>
-                <div className="card-content field is-grouped is-grouped-right">
+                <div className="card-content container is-flex is-justify-content-end">
                     {props.children}
-                    <Link to={`/r/${subreddit}/${id}`} className="button is-info is-medium">
-                        <FontAwesomeIcon icon={faFileLines} size="xl" className="mr-2"/><span>Read More</span>
-                        </Link>
+                    <Link to={`/r/${subreddit}/${id}`} className="ml-4 button is-medium is-info is-responsive">
+                        <FontAwesomeIcon icon={faFileLines} size="xl" className="mr-2" /><span>Read Post</span>
+                    </Link>
                 </div>
             </div>
         </article>

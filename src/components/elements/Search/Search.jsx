@@ -2,8 +2,11 @@ import { useNavigate, createSearchParams } from "react-router-dom";
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { selectNavBarMenu,toggleMenu } from "@/components/layout/navBar/navBarSlice"
 export default function Search(props) {
-
+    const dispatch = useDispatch()
+    const showMobileNav = useSelector(selectNavBarMenu)
     const navigate = useNavigate()
     const [search, setSearch] = useState('')
 
@@ -28,6 +31,11 @@ export default function Search(props) {
             pathname: '/search',
             search: `?${query}`
         })
+
+        if (showMobileNav == true) {
+            dispatch(toggleMenu())
+            console.log('clicked')
+        }
 
     }
 

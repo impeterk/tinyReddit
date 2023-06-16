@@ -12,7 +12,7 @@ export default function Comment(props) {
                 <FontAwesomeIcon icon={faThumbsUp} flip="horizontal" className="mx-2 has-text-info" />
                <p className="">{ups}</p> 
             </div>
-            <p className="has-text-justified">
+            <p className="">
                 {body}
             </p>
         </article>

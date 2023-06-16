@@ -28,7 +28,6 @@ const postSlice = createSlice({
         [loadPost.fulfilled]: (state, action) => {
             state.postData = action.payload[0].data.children[0].data
             state.comments = action.payload[1].data.children
-            // state.comment = state.comments.sort((a,b) => b.data.ups - a.data.ups)
             state.isLoadingPost = false
             state.failedToLoadPost = false
         },

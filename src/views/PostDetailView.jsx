@@ -29,13 +29,12 @@ export default function PostDetailView() {
     }
 
 
-    console.log({ postData, comments })
     return (
         <div className="mt-4 ">
             {/* <div className="is-flex my-4">
                 <button className="button is-link" onClick={goBack}>go Back</button>
             </div> */}
-            <div className="card p-2 ">
+            <div className="card p-2 container">
                 <div className="card-content">
                     <h1 className="title is-3">{postData.title}</h1>
                     <p className="subtitle has-text-right">by: {postData.author}</p>
@@ -45,12 +44,13 @@ export default function PostDetailView() {
                         <figure className="image">
                             <img src={postData.url} alt={postData.title} />
                         </figure>
-                    </div> : <div className="card-content">
+                    </div> : ""}
+                     <div className="card-content">
                         <div className="content">
                             {postData.selftext}
                         </div>
                     </div>
-                }
+                
                 <div className="card-content">
                     <p className="subtitle is-3">Comments</p>
                     <div className="media">
