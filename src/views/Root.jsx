@@ -1,5 +1,5 @@
-import Panel from "@/components/layout/Panel";
-import NavBar from "@/components/layout/navBar/NavBar";
+import Panel from "/src/components/layout/Panel";
+import NavBar from "/src/components/layout/navBar/NavBar";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 import Search from "../components/elements/Search/Search";
 

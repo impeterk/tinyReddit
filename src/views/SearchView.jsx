@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { addSubreddit } from '@/components/elements/navigation/subredditList/subredditSlice'
+import { addSubreddit } from '/src/components/elements/navigation/subredditList/subredditSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadSearchResults, selectLoadingSearch, selectSearchResults } from '../components/elements/Search/searchSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight,faDoorOpen } from '@fortawesome/free-solid-svg-icons'
-import Post from '@/components/elements/postList/Post'
+import Post from '/src/components/elements/postList/Post'
 export default function SearchView() {
     const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()

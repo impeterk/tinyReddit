@@ -1,6 +1,5 @@
-import Footer from "@/components/elements/navigation/Footer"
-import SubredditList from "@/components/elements/navigation/subredditList/SubredditList"
-import NavButtons from "../elements/navigation/NavButtons"
+import Footer from "/src/components/elements/navigation/Footer"
+import SubredditList from "/src/components/elements/navigation/subredditList/SubredditList"
 export default function Panel() {
 
 

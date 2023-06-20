@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom"
-import { selectNavBarMenu,toggleMenu } from "@/components/layout/navBar/navBarSlice"
+import { selectNavBarMenu,toggleMenu } from "/src/components/layout/navBar/navBarSlice"
 import { useDispatch, useSelector } from "react-redux"
 
 export default function SubredditLink(props) {

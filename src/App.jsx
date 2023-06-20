@@ -1,8 +1,8 @@
 import { Route, createRoutesFromElements, createBrowserRouter, RouterProvider } from "react-router-dom"
-import Root from "@/views/Root"
-import PostsView from "@/views/PostsView"
-import PostDetailView from "@/views/PostDetailView"
-import AboutView from '@/views/AboutView'
+import Root from "/src/views/Root"
+import PostsView from "/src/views/PostsView"
+import PostDetailView from "/src/views/PostDetailView"
+import AboutView from '/src/views/AboutView'
 import SearchView from "./views/SearchView"
 import ErrorView from "./views/ErrorView"
 

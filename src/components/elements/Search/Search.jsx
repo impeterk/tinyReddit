@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { selectNavBarMenu,toggleMenu } from "@/components/layout/navBar/navBarSlice"
+import { selectNavBarMenu,toggleMenu } from "/src/components/layout/navBar/navBarSlice"
 export default function Search(props) {
     const dispatch = useDispatch()
     const showMobileNav = useSelector(selectNavBarMenu)

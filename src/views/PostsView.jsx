@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import Post from '@/components/elements/postList/Post.jsx'
+import Post from '/src/components/elements/postList/Post.jsx'
 import { Navigate, useParams } from 'react-router-dom';
-import { selectPostsInSubreddit, loadSubreddit, loadMorePosts, selectIsLoading, selectLoadingMore, selectFailedToLoad } from '@/components/elements/navigation/subredditList/subredditSlice';
+import { selectPostsInSubreddit, loadSubreddit, loadMorePosts, selectIsLoading, selectLoadingMore, selectFailedToLoad } from '/src//components/elements/navigation/subredditList/subredditSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
