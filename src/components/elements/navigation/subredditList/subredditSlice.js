@@ -7,7 +7,13 @@ export const loadSubreddit = createAsyncThunk(
     async (subreddit) => {
         let response = await fetch(`https://www.reddit.com/r/${subreddit}.json`)
         let responseJSON = await response.json()
-        return responseJSON
+        let responseData
+        try {
+            responseData = responseJSON.data.children
+        } catch (error) {
+           throw new Error(error) 
+        }
+        return responseData
     }
 )
 
@@ -49,7 +55,7 @@ const subredditSlice = createSlice({
             state.failedToLoad = false
         },
         [loadSubreddit.fulfilled]: (state, action) => {
-            state.postsInSubreddit = action.payload.data.children
+            state.postsInSubreddit = action.payload
             state.isLoading = false
             state.failedToLoad = false
         },
@@ -81,3 +87,4 @@ export const selectSubredditList = (state) => state.subreddit.subredditList
 export const selectIsLoading = (state) => state.subreddit.isLoading
 export const selectPostsInSubreddit = (state) => state.subreddit.postsInSubreddit
 export const selectLoadingMore = (state) => state.subreddit.loadingMore
+export const selectFailedToLoad = (state) => state.subreddit.failedToLoad

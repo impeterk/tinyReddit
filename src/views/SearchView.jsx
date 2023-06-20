@@ -34,7 +34,7 @@ export default function SearchView() {
     return (
         <>
             <Link onClick={onLinkClick} >
-                <div className="hero is-info ">
+                <div className="hero is-info is-rounded">
                     <div className="hero-body">
                         <div className="title has-text-right ">
                         <span className="subtitle mr-2">

@@ -44,7 +44,7 @@ export default function Navbar(props) {
   }
 
     return (
-        <nav className="navbar is-light is-fixed-top " role="navigation" aria-label="main navigation">
+        <nav className="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation">
   <div className="navbar-brand">
     <p onClick={scrollToTop} className="is-clickable is-size-3 has-text-weight-semibold mx-5">{`<`}React<span className="has-text-info has-text-weight-bold">2</span>Reddit{` />`}</p>
 
