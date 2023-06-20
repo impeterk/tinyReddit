@@ -51,7 +51,6 @@ export default function PostsView() {
     )
     }
     
-    console.log(postsArray)
     
     return (
         <>
