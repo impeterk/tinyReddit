@@ -27,7 +27,7 @@ export default function SearchView() {
         navigate({
             pathname: `/r/${searchQuery}`
         })
-        setSearchParams(prev => '')
+        setSearchParams(() => '')
     }
 
 

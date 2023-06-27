@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
+import { faLeftLong, } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavButtons() {
 
@@ -9,11 +9,6 @@ export default function NavButtons() {
     const goBack = () => {
         console.log(navigate)
         navigate(-1)
-    }
-    const goForward = () => {
-        console.log(navigate)
-        navigate(1)
-
     }
     return (
         <div className="is-flex is-justify-content-space-between container">

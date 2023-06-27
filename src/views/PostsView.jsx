@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Post from '/src/components/elements/postList/Post.jsx'
 import { Navigate, useParams } from 'react-router-dom';
 import { selectPostsInSubreddit, loadSubreddit, loadMorePosts, selectIsLoading, selectLoadingMore, selectFailedToLoad } from '/src//components/elements/navigation/subredditList/subredditSlice';
@@ -26,15 +26,15 @@ export default function PostsView() {
         }
     }, [subreddit])
 
-    // useEffect(() => {
-    //     dispatch(loadMorePosts({ subreddit, limit }))
-    // }, [limit])
+    useEffect(() => {
+        dispatch(loadMorePosts({ subreddit, limit }))
+    }, [limit])
 
-    // const handleLoadMoreClick = () => {
-    //     setLimit(prev => {
-    //         return prev + 5
-    //     })
-    // }
+    const handleLoadMoreClick = () => {
+        setLimit(prev => {
+            return prev + 5
+        })
+    }
     if (loadingSubreddit) {
         return (
 
@@ -69,13 +69,13 @@ export default function PostsView() {
                     </li>
                 ))}
             </ul>
-            {/* <div className="container block">
+            <div className="container block">
                 <button className={`button is-info is-fullwidth is-medium ${isLoadingMore ? 'is-loading' : ''}`} onClick={handleLoadMoreClick}>
                     <FontAwesomeIcon icon={faChevronDown} size="xl" />
                     <p className="is-size-4 has-text-weight-semibold mx-4">Load 5 More</p>
                     <FontAwesomeIcon icon={faChevronDown} size="xl" />
                 </button>
-            </div> */}
+            </div>
         </>
     )
 }

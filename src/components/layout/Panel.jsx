@@ -11,11 +11,7 @@ export default function Panel() {
             {`<React2Reddit />`}
           </p>
         </div>
-        {/* <div className="panel-block">
-          <NavButtons />
-        </div> */}
-
-          <SubredditList />
+        <SubredditList />
         <div className="mt-auto">
           <Footer />
         </div>
