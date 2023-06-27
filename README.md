@@ -13,6 +13,7 @@
 - Simplified interface for easy navigation.
 - Efficient state management using Redux.
 - Styling and layout components powered by Bulma CSS.
+- Client side routing with React Router
 
 ## Usage
 
@@ -30,6 +31,7 @@ This project is deployed using Vercel. The live version of the application can b
   - React: [https://reactjs.org/](https://reactjs.org/)
   - Redux: [https://redux.js.org/](https://redux.js.org/)
   - Bulma CSS: [https://bulma.io/](https://bulma.io/)
+  - React Router: [https://reactrouter.com/](https://reactrouter.com/)
 
 
 
