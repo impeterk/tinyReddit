@@ -1,36 +1,23 @@
-import Navbar from './components/NavBar'
-import Data from './Data'
-import SubredditList from './components/SubredditList'
-import Search from './components/Search'
-import { useState } from 'react'
-import Footer from './components/Footer'
-import Cookies from './components/Cookies'
+import { Route, createRoutesFromElements, createBrowserRouter, RouterProvider } from "react-router-dom"
+import Root from "/src/views/Root"
+import PostsView from "/src/views/PostsView"
+import PostDetailView from "/src/views/PostDetailView"
+import AboutView from '/src/views/AboutView'
+import SearchView from "./views/SearchView"
+import ErrorView from "./views/ErrorView"
 
-function App() {
+const appRouter = createBrowserRouter(createRoutesFromElements(
+    <Route path="/" element={<Root />} errorElement={<ErrorView />}>
+        <Route path="/r/:subreddit" element={<PostsView />}/>
+        <Route path="/r/:subreddit/:id" element={<PostDetailView />} />
+        <Route path="search" element={<SearchView />} />
+        <Route path="/about" element={<AboutView />} />
+        <Route path="/404" element={<ErrorView />} />
+    </Route>
+))
 
-  // global states. Not the best solution, but better then before
-  const [subreddit, setSubreddit] = useState('popular')
-  const [search, setSearch] = useState('')
-  const [listing, setListing] = useState('hot')
-
-  return (
-    <div className="App">
-      <Navbar subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch} listing={listing} setListing={setListing} search={search} />
-      <div className='columns mx-1 py-1 is-desktop'>
-        <div className='column is-8 is-offset-1 my-1 px-1'>
-          {search.length !== 0 ?
-            <Search search={search} /> :
-            <Data subreddit={subreddit} listing={listing} />
-          }
-        </div>
-        <div className="column is-one-quarter">
-          <SubredditList subreddit={subreddit} setSubreddit={setSubreddit} setSearch={setSearch} />
-          <Cookies />
-        </div>
-      </div>
-      <Footer />
-    </div>
-  )
+export default function App() {
+    return (
+        <RouterProvider router={appRouter} />
+    )
 }
-
-export default App

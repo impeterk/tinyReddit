@@ -151,8 +151,8 @@ As of right now, state and props are creating amazing waterfall from top to `<Ap
 Redux should also help with creating `async` parts (slices) and components them self should get smaller and less complex. However this would also mean that I am going to have more files and more splitted code,
 which might be helpful as well.
 
----
 
+---
 #### 03.05.2023
 
 Today I have started working on the router and it going much smoother then I expected. Now I regret big time, that I did not implemented router at first, when I started working on this Application.
