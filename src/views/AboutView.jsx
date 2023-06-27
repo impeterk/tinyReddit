@@ -5,7 +5,7 @@ export default function About() {
                 <section className="hero is-medium is-desktop is-rounded is-info is-about">
                     <div className="hero-body has-text-centered">
                         <p className="title is-size-1">
-                         
+                       <br/> 
                         </p>
                     </div>
                 </section>
