@@ -1,6 +1,8 @@
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileLines } from "@fortawesome/free-solid-svg-icons"
+import  ReactMarkdown  from 'react-markdown';
+
 export default function Post(props) {
     const { title, author, subreddit, selftext, id, post_hint, url } = props.post.data
 
@@ -22,9 +24,9 @@ export default function Post(props) {
 
                 </div>
                 <div className="card-content is-size-5">
-                    <p className="line-clamp-3">
-                        {selftext}
-                    </p>
+                        <ReactMarkdown className="line-clamp-3">
+                            {selftext}
+                        </ReactMarkdown>
 
                 </div>
                 <div className="card-content container is-flex is-justify-content-end">

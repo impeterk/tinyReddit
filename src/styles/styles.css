@@ -109,3 +109,8 @@ display: none!important;
   line-clamp: 3 !important;
   overflow: hidden !important;
 }
+
+.is-about {
+  background-image: url("/public/assets/aboutApp.webp");
+  background-size: cover;
+}
