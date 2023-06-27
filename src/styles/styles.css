@@ -112,5 +112,6 @@ display: none!important;
 
 .is-about {
   background-image: url("/public/assets/aboutApp.webp");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

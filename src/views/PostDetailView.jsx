@@ -1,10 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom"
-import { useEffect,useState} from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadPost, selectIsLoading, selectComments, selectPostData } from "../components/elements/postList/postListSlice"
 import Comment from "/src/components/elements/postList/Comment"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import ReactMarkdown from "react-markdown"
 
 export default function PostDetailView() {
     const { subreddit, id } = useParams()
@@ -24,7 +25,7 @@ export default function PostDetailView() {
     }
     const toggleModal = () => {
         setModal(() => {
-        return !modal
+            return !modal
         })
     }
 
@@ -33,7 +34,7 @@ export default function PostDetailView() {
             <div className={`pageloader is-active is-light`}><span className="title">Loading...</span></div>
         )
     }
-    
+
     return (
         <div className="mt-4 ">
             <div className="card p-2 container">
@@ -71,7 +72,9 @@ export default function PostDetailView() {
                     : ""}
                 <div className="card-content">
                     <div className="content">
-                        {postData.selftext}
+                        <ReactMarkdown>
+                            {postData.selftext}
+                        </ReactMarkdown>
                     </div>
                 </div>
 
