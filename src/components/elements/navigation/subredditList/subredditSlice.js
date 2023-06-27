@@ -17,6 +17,8 @@ export const loadSubreddit = createAsyncThunk(
     }
 )
 
+// loads more posts based on limit
+
 export const loadMorePosts = createAsyncThunk(
     "subreddit/loadMorePosts",
     async ({ subreddit, limit }) => {

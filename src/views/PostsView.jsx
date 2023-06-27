@@ -26,6 +26,7 @@ export default function PostsView() {
         }
     }, [subreddit])
 
+    // responsible for loading more posts
     useEffect(() => {
         dispatch(loadMorePosts({ subreddit, limit }))
     }, [limit])
@@ -35,6 +36,7 @@ export default function PostsView() {
             return prev + 5
         })
     }
+
     if (loadingSubreddit) {
         return (
 
