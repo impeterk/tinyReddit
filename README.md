@@ -1,5 +1,7 @@
 # <React 2 Reddit />
 
+### Reddit is currently experiencing protests, due to overpriced APIs and poor management of the situation. Many subreddits are therefore down
+
 <React 2 Reddit /> is a responsive, read-only Reddit web application built using React, Redux, and Bulma CSS. It is deployed and accessible at [react2reddit.vercel.app](https://react2reddit.vercel.app).
 
 ## Description
@@ -23,7 +25,9 @@ To access and use <React 2 Reddit />, simply visit [react2reddit.vercel.app](htt
 
 This project is deployed using Vercel. The live version of the application can be accessed at [react2reddit.vercel.app](https://react2reddit.vercel.app).
 
+## Known issues
 
+- You have double click to be properly redirected from error page
 
 ## Acknowledgments
 
