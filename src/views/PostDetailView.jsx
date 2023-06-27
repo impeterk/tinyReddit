@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from "react-router-dom"
-import { getSubreddit } from "../api"
 import { useEffect,useState} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadPost, selectIsLoading, selectComments, selectPostData } from "../components/elements/postList/postListSlice"
