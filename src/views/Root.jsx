@@ -7,7 +7,7 @@ export default function Root() {
     const location = useLocation()
     if (location.pathname == '/') {
         return (
-            <Navigate to="/r/reactjs" />
+            <Navigate to="reactjs" />
         )
     }
 
@@ -20,7 +20,7 @@ export default function Root() {
                     <div className="only-desktop is-sticky is-flex containter has-background-info-light py-2 ">
                         <Search />
                     </div>
-                        <Outlet />
+                    <Outlet />
                 </div>
             </div>
         </div>

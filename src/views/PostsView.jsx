@@ -20,9 +20,9 @@ export default function PostsView() {
     useEffect(() => {
         dispatch(loadSubreddit(subreddit))
         if (limit != 25) {
-        setLimit((value) => {
-            return value = 25
-        })
+            setLimit((value) => {
+                return value = 25
+            })
         }
     }, [subreddit])
 
@@ -48,18 +48,17 @@ export default function PostsView() {
         )
     }
     if (failedToLoad) {
-    return (
-        <Navigate to="/404" />
-    )
+        return (
+            <Navigate to="/404" />
+        )
     }
-    
-    
+
+
     return (
         <>
             <section className="hero is-medium is-desktop is-rounded is-info">
                 <div className="hero-body has-text-centered">
                     <p className="title is-size-1">
-                        <span className="title">/r/</span>
                         {subredditTitle}
                     </p>
                 </div>

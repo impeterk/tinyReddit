@@ -9,8 +9,8 @@ import { Helmet } from "react-helmet"
 
 const appRouter = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorView />}>
-        <Route path="/r/:subreddit" element={<PostsView />} />
-        <Route path="/r/:subreddit/:id" element={<PostDetailView />} />
+        <Route path=":subreddit" element={<PostsView />} />
+        <Route path=":subreddit/:id" element={<PostDetailView />} />
         <Route path="search" element={<SearchView />} />
         <Route path="/about" element={<AboutView />} />
         <Route path="/404" element={<ErrorView />} />

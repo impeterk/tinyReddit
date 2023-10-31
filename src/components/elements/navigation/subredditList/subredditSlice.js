@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const initialList = ['reactjs', 'Fun', 'nextjs', 'unixporn', 'ubuntu']
+const initialList = ['reactjs', 'nuxt', 'nextjs', 'unixporn', 'sveltejs']
 
 export const loadSubreddit = createAsyncThunk(
     "subreddit/loadSubreddit",
@@ -11,7 +11,7 @@ export const loadSubreddit = createAsyncThunk(
         try {
             responseData = responseJSON.data.children
         } catch (error) {
-           throw new Error(error) 
+            throw new Error(error)
         }
         return responseData
     }
