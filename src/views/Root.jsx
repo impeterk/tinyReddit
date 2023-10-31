@@ -3,11 +3,12 @@ import NavBar from "/src/components/layout/navBar/NavBar";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 import Search from "../components/elements/Search/Search";
 
+
 export default function Root() {
     const location = useLocation()
     if (location.pathname == '/') {
         return (
-            <Navigate to="reactjs" />
+            <Navigate to="/reactjs" />
         )
     }
 
