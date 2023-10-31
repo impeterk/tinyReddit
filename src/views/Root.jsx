@@ -8,7 +8,7 @@ export default function Root() {
     const location = useLocation()
     if (location.pathname == '/') {
         return (
-            <Navigate to="/reactjs" />
+            <Navigate to="/about" />
         )
     }
 
