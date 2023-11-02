@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileLines } from "@fortawesome/free-solid-svg-icons"
-import  ReactMarkdown  from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 
 export default function Post(props) {
     const { title, author, subreddit, selftext, id, post_hint, url } = props.post.data
@@ -24,14 +24,14 @@ export default function Post(props) {
 
                 </div>
                 <div className="card-content is-size-5">
-                        <ReactMarkdown className="line-clamp-3">
-                            {selftext}
-                        </ReactMarkdown>
+                    <ReactMarkdown className="line-clamp-3">
+                        {selftext}
+                    </ReactMarkdown>
 
                 </div>
                 <div className="card-content container is-flex is-justify-content-end">
                     {props.children}
-                    <Link to={`/r/${subreddit}/${id}`} className="ml-4 button is-medium is-info is-responsive">
+                    <Link to={`/${subreddit}/${id}`} className="ml-4 button is-medium is-info is-responsive">
                         <FontAwesomeIcon icon={faFileLines} size="xl" className="mr-2" /><span>Read Post</span>
                     </Link>
                 </div>

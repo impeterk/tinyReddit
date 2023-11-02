@@ -13,9 +13,9 @@ export default function Comment(props) {
                 <FontAwesomeIcon icon={faThumbsUp} flip="horizontal" className="mx-2 has-text-info" />
                 <p className="">{ups}</p>
             </div>
-                <ReactMarkdown className="container content is-flex is-flex-direction-column">
-                    {body}
-                </ReactMarkdown>
+            <ReactMarkdown className="container content is-flex is-flex-direction-column" >
+                {body}
+            </ReactMarkdown>
         </article>
     )
 }
