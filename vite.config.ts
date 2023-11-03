@@ -8,11 +8,12 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      registerType: "autoUpdate",
       manifest: {
         name: "React 2 Reddit",
         short_name: "React 2 Reddit",
         description: "Reddit read only client writen in react",
-        theme_color: "#eff5fb",
+        theme_color: "#fff",
         icons: [
           {
             src: "/assets/react-reddit-logo.png",

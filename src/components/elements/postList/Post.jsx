@@ -17,7 +17,7 @@ export default function Post(props) {
                         <div className="media-content">
                             {post_hint == "image" ? (
                                 <figure className="image">
-                                    <img src={url} alt={url} />
+                                    <img src={url} alt={url} loading="lazy" />
                                 </figure>) : ""
                             }
                         </div>
