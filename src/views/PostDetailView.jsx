@@ -66,9 +66,13 @@ export default function PostDetailView() {
                     : ""}
                 {postData.media ?
                     <div className="card-image">
-                        <video className="image is-clickable" controls>
-                            <source src={postData.media.reddit_video.fallback_url} type="video/mp4" />
-                        </video>
+                        {postData.media.reddit_video &&
+                            <video className="image is-clickable" controls>
+                                <source src={postData.media.reddit_video.fallback_url} type="video/mp4" />
+                            </video>}
+                        {postData.media.oembed &&
+                            <div dangerouslySetInnerHTML={{ __html: parse(postData.media.oembed.html || '') }} className="is-flex is-justify-content-center" />
+                        }
                     </div>
                     : ""}
                 <div className="card-content">

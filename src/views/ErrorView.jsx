@@ -1,4 +1,4 @@
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ErrorView() {
     const navigate = useNavigate()
@@ -13,7 +13,7 @@ export default function ErrorView() {
                 <img src="/assets/404.webp" alt="lego figurine holding disconnected power line" />
             </figure>
             <div className="mt-6">
-                <button className="button is-medium is-info" onClick={returnToHomePage} >Return to Home Page</button>
+                <button className="button is-medium is-info" onClick={returnToHomePage}>Return to Home Page</button>
             </div>
         </div>
     );
