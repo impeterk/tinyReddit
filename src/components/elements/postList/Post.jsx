@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileLines } from "@fortawesome/free-solid-svg-icons"
-import ReactMarkdown from 'react-markdown';
+import parse from 'html-react-parser';
+
 
 export default function Post(props) {
-    const { title, author, subreddit, selftext, id, post_hint, url } = props.post.data
+    const { title, author, subreddit, selftext_html, id, post_hint, url } = props.post.data
 
     return (
         <article className="section py-5 px-0">
@@ -24,9 +25,8 @@ export default function Post(props) {
 
                 </div>
                 <div className="card-content is-size-5">
-                    <ReactMarkdown className="line-clamp-3">
-                        {selftext}
-                    </ReactMarkdown>
+                    <div className="line-clamp-3" dangerouslySetInnerHTML={{ __html: parse(selftext_html || '') }}>
+                    </div>
 
                 </div>
                 <div className="card-content container is-flex is-justify-content-end">

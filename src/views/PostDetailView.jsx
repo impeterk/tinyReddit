@@ -5,7 +5,7 @@ import { loadPost, selectIsLoading, selectComments, selectPostData } from "../co
 import Comment from "/src/components/elements/postList/Comment"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import ReactMarkdown from "react-markdown"
+import parse from 'html-react-parser';
 
 export default function PostDetailView() {
     const { subreddit, id } = useParams()
@@ -35,6 +35,7 @@ export default function PostDetailView() {
         )
     }
 
+    console.log(postData)
     return (
         <div className="mt-4 ">
             <div className="card p-2 container">
@@ -71,11 +72,7 @@ export default function PostDetailView() {
                     </div>
                     : ""}
                 <div className="card-content">
-                    <div className="content">
-                        <ReactMarkdown>
-                            {postData.selftext}
-                        </ReactMarkdown>
-                    </div>
+                    <div className="content" dangerouslySetInnerHTML={{ __html: parse(postData.selftext_html || '') }} />
                 </div>
 
                 <div className="container card-content">

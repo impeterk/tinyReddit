@@ -1,8 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons"
-import ReactMarkdown from "react-markdown"
+import parse from 'html-react-parser';
+
+
 export default function Comment(props) {
-    const { author, body, ups } = props.commentData
+    const { author, body_html, ups } = props.commentData
+
+    if (!body_html) {
+        return (
+            <p>Loading comments...</p>
+        )
+    }
 
     return (
         <article className="media my-2 is-flex-direction-column">
@@ -13,9 +21,7 @@ export default function Comment(props) {
                 <FontAwesomeIcon icon={faThumbsUp} flip="horizontal" className="mx-2 has-text-info" />
                 <p className="">{ups}</p>
             </div>
-            <ReactMarkdown className="container content is-flex is-flex-direction-column" >
-                {body}
-            </ReactMarkdown>
-        </article>
+            <div className="content is-flex is-flex-direction-column" dangerouslySetInnerHTML={{ __html: parse(body_html || '') }} />
+        </article >
     )
 }
